@@ -1,0 +1,2658 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<table border="1" style="width:100%">
+  <tr>
+    <th>Object</th>
+    <th>Description</th>
+    <th>Property</th>
+    <th>Sub-Property</th>
+    <th>Sub-Property</th>
+    <th>Description</th>	
+    <th>Default</th>
+    <th>Type</th>
+  </tr>
+  <tr>
+    <td>alerts</td>
+    <td>Settings for alerts feature</td>
+    <td>pageSize</td>
+    <td></td>
+     <td></td>
+    <td>The number of alerts shown in the list view at a time.</td>
+    <td>15</td>
+    <td>number</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td>paramKeys</td>
+    <td></td>
+     <td></td>
+    <td>Actionable alerts parameter keys</td>
+    <td>,fromAccountDisplayName,toAccountNickname,transferAmount,condition,transactionAmount,
+      merchantName,merchantCity,amount,biller,dueDate,transactionFee,billerName,</td>
+    <td>String</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td>alertsEnabled</td>
+    <td></td>
+    <td></td>
+    <td>Enable/disable alerts</td>
+    <td>true</td>
+    <td>boolean</td>
+  </tr>
+    <td></td>
+    <td></td>
+    <td>actionableAlertsEnabled</td>
+    <td></td>
+    <td></td>
+    <td>Enable/disable actionable alerts</td>
+    <td>true</td>
+    <td>boolean</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td>alertHistoryEnabled</td>
+    <td></td>
+    <td></td>
+    <td>Enable/disable alert history</td>
+    <td>true</td>
+    <td>boolean</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td>generalAlertsEnabled</td>
+    <td></td>
+    <td></td>
+    <td>Enable/disable general alerts</td>
+    <td>true</td>
+    <td>boolean</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td>accountAlertsEnabled</td>
+    <td></td>
+    <td></td>
+    <td>Enable/disable account alerts</td>
+    <td>true</td>
+    <td>boolean</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td>alertPrefsEnabled</td>
+    <td></td>
+    <td></td>
+    <td>Enable/disable alert preferences</td>
+    <td>true</td>
+    <td>boolean</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td>datepicker</td>
+    <td></td>
+    <td></td>
+    <td>Search date picker settings</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+  
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>maxSearchDays</td>
+    <td></td>
+    <td>The maximum days to search before today's date. Used on search page</td>
+    <td>365</td>
+    <td>integer</td>
+  </tr>
+    <tr>
+
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>maxDays</td>
+    <td></td>
+    <td>The total number of days that user is able to select a date until. Should be greater than minDays</td>
+    <td>30</td>
+    <td>integer</td>
+  </tr>
+  <tr>
+  
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>minDays</td>
+    <td></td>
+    <td>The total number of days that user is able to select a date until. Should be greater than maxDays</td>
+    <td>0</td>
+    <td>integer</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>blackOutDays</td>
+    <td></td>
+    <td>Days of the week indicated by 0 (Sunday) though 6 (Saturday) that will be blacked out</td>
+    <td>[]</td>
+    <td>array</td>
+  </tr>
+  <tr>
+   
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>blackOutDates</td>
+    <td></td>
+    <td>Date Ranges or individual dates in the following format: ['20 Mar 2014 - 1 May 2014', '28 Apr 2014'] that are blacked out or unselectable on the calendar. Typically holidays.</td>
+    <td>[]</td>
+    <td>array</td>
+  </tr>
+  <tr>
+    
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>isAlertCalendar</td>
+    <td></td>
+    <td>Configures datepicker to work for alerts dnd</td>
+    <td>true</td>
+    <td>boolean</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td>"maxSearchDays",
+                        "minDays",
+                        "maxDays",
+                        "blackOutDays",
+                        "blackOutDates",
+                        "isAlertCalendar"</td>
+    <td></td>
+
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>"pageSize","paramKeys"</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>mvpAuth</td>
+    <td></td>
+    <td>authServiceName</td>
+    <td></td>
+    <td></td>
+    <td>basic - enable basic auth, mfa-sitekey - enable mfa with site key auth, mfa-nositekey - enable mfa without site key auth</td>
+    <td>mfa-sitekey</td>
+    <td>string</td>
+  </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td>passcodeEnabled</td>
+    <td></td>
+    <td></td>
+    <td>authBasicEventListener - Enable Basic Auth Authentication, mFAEventListener - Enable MFA Authentication, passcodeEventListener - Enable Passcode Authentication</td>
+    <td>false</td>
+    <td>boolean</td>
+  </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td>"authServiceNames",
+        "passcodeEnabled"</td>
+    <td></td>
+  </tr>
+   <tr>
+    <td>billPay</td>
+    <td>Transfer Module Settings</td>
+    <td>paymentReview</td>
+    <td></td>
+    <td></td>
+    <td>Toggles Review step, Next becomes Submit and Confirmation page skipped</td>
+    <td>true</td>
+    <td>boolean</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td>paymentsEnabled</td>
+    <td></td>
+    <td></td>
+    <td>Enable or disable the payments module</td>
+    <td>true</td>
+    <td>boolean</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td>paymentsRecentEnabled</td>
+    <td></td>
+    <td></td>
+    <td>Enable or disable the payments recent tab</td>
+    <td>true</td>
+    <td>boolean</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td>paymentsScheduledEnabled</td>
+    <td></td>
+    <td></td>
+    <td>Enable or disable the payments schedule tab</td>
+    <td>true</td>
+    <td>boolean</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td>minDays</td>
+    <td></td>
+    <td></td>
+    <td>The number of days before a user is able to select a date. Should be less than the maxDays</td>
+    <td>0</td>
+    <td>integer</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td>maxDays</td>
+    <td></td>
+    <td></td>
+    <td>The total number of days that user is able to select a date until. Should be greater than minDays</td>
+    <td>3650</td>
+    <td>integer</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td>blackOutDays</td>
+    <td></td>
+    <td></td>
+    <td>Days of the week indicated by 0 (Sunday) though 6 (Saturday) that will be blacked out</td>
+    <td>[0,6]</td>
+    <td>array</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td>blackOutDates</td>
+    <td></td>
+    <td></td>
+    <td>Date Ranges or individual dates in the following format: ['20 Mar 2014 - 1 May 2014', '28 Apr 2014'] that are blacked out or unselectable on the calendar. Typically holidays. </td>
+    <td>[
+                        "2/16/2015",
+                        "2/15/2016",
+                        "2/20/2017",
+                        "2/19/2018",
+                        "10/12/2015",
+                        "10/10/2016",
+                        "10/9/2017",
+                        "10/8/2018"
+                    ]</td>
+    <td>array</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>"paymentReview",
+                "paymentsEnabled",
+                "paymentsRecentEnabled",
+                "paymentsScheduledEnabled",
+                "minDays",
+                "maxDays",
+                "blackOutDays",
+                "blackOutDates"</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>payees</td>
+    <td>Payees Settings</td>
+    <td>defaultPageSize</td>
+    <td></td>
+    <td></td>
+    <td>Default page size for show more functionality</td>
+    <td>15</td>
+    <td>integer</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>defaultPageSize</td>
+    <td></td>
+  </tr>
+   <tr>
+    <td>cordovaPushNotification</td>
+    <td>Cordova Push Notification Settings</td>
+    <td>android</td>
+    <td></td>
+    <td></td>
+    <td>Push Notification Settings for Android</td>
+    <td></td>
+    <td></td>
+  </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>senderID</td>
+    <td></td>
+    <td>Android Sender ID for Push notification</td>
+    <td>1047466433565</td>
+    <td>string</td>
+  </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td>senderID</td>
+    <td></td>
+  </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>android</td>
+    <td></td>
+  </tr>
+   <tr>
+    <td>mvpNgDda</td>
+    <td>Settings for Mvp Ng DDA Module Transaction Settings</td>
+    <td>accountListbehavior</td>
+    <td></td>
+    <td></td>
+    <td>Settings for different list display Settings</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>accounts</td>
+    <td></td>
+    <td>Accounts list accordion starting state</td>
+    <td>open</td>
+    <td>string</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>alerts</td>
+    <td></td>
+    <td>Alert list accordion starting state</td>
+    <td>first</td>
+    <td>string</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>default</td>
+    <td></td>
+    <td>Default list accordion starting state</td>
+    <td>open</td>
+    <td>string</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>deposit</td>
+    <td></td>
+    <td>Deposit list accordion starting state</td>
+    <td>DDA</td>
+    <td>string</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>payment</td>
+    <td></td>
+    <td>Payment list accordion starting state</td>
+    <td>first</td>
+    <td>string</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>transfer</td>
+    <td></td>
+    <td>Transfer Settings list accordion starting state</td>
+    <td>DDA</td>
+    <td>string</td>
+  </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>required</td>
+    <td></td>
+    <td></td>
+    <td>default</td>
+    <td></td>
+  </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td>defaultPageSize</td>
+    <td></td>
+    <td></td>
+    <td>Default page size for show more functionality and should be at least a value of 10</td>
+    <td>15</td>
+    <td>integer</td>
+  </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td>accountsThreshold</td>
+    <td></td>
+    <td></td>
+    <td>The maximum number of accounts to be used for carousel view, otherwise we use a list view</td>
+    <td>5</td>
+    <td>integer</td>
+  </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td>inSearch</td>
+    <td></td>
+    <td></td>
+    <td>Enable search</td>
+    <td>false</td>
+    <td>boolean</td>
+  </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td>accountTypeNames</td>
+    <td></td>
+    <td></td>
+    <td>Names for the diferrent types of accounts</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>CHK</td>
+    <td></td>
+    <td>CHK to Checking Account</td>
+    <td>Checking Account</td>
+    <td>string</td>
+  </tr>
+  <tr>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td>CRD</td>
+     <td></td>
+     <td>CRD to Credit Account</td>
+     <td>Credit Account</td>
+     <td>string</td>
+  </tr>
+   <tr>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td>SAV</td>
+     <td></td>
+     <td>SAV to Savings Account</td>
+     <td>Savings Account</td>
+     <td>string</td>
+  </tr>
+   <tr>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td>required</td>
+     <td></td>
+     <td></td>
+     <td>"CHK",
+                        "CRD",
+                        "SAV"</td>
+     <td></td>
+  </tr>
+    <tr>
+    <td></td>
+    <td></td>
+    <td>searchSettings</td>
+    <td></td>
+    <td></td>
+    <td>Settings related to transaction search</td>
+    <td></td>
+    <td></td>
+  </tr>
+   <tr>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td>searchEnabled</td>
+     <td></td>
+     <td>Whether the user is able to search transactions</td>
+     <td>true</td>
+     <td>boolean</td>
+  </tr>
+   <tr>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td>searchByAmountEnabled</td>
+     <td></td>
+     <td>The option to search by amount is enabled</td>
+     <td>true</td>
+     <td>boolean</td>
+  </tr>
+   <tr>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td>searchByCheckEnabled</td>
+     <td></td>
+     <td>The option to search by check is enabled</td>
+     <td>true</td>
+     <td>boolean</td>
+  </tr>
+   <tr>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td>searchByDateEnabled</td>
+     <td></td>
+     <td>The option to search by date is enabled</td>
+     <td>true</td>
+     <td>boolean</td>
+  </tr>
+   <tr>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td>required</td>
+     <td></td>
+     <td></td>
+     <td>"searchEnabled",
+                        "searchByAmountEnabled",
+                        "searchByCheckEnabled",
+                        "searchByDateEnabled"</td>
+     <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td>datePicker</td>
+    <td></td>
+    <td></td>
+    <td>Search date picker settings</td>
+    <td></td>
+    <td></td>
+  </tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>maxSearchDays</td>
+    <td></td>
+    <td>The maximum days to search before today's date. Used on search page</td>
+    <td>365</td>
+    <td>integer</td>
+  </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>minDays</td>
+    <td></td>
+    <td>The total number of days that user is able to select a date until. Should be greater than maxDays</td>
+    <td>0</td>
+    <td>integer</td>
+  </tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>maxDays</td>
+    <td></td>
+    <td>The total number of days that user is able to select a date until. Should be greater than minDays</td>
+    <td>30</td>
+    <td>integer</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>blackOutDays</td>
+    <td></td>
+    <td>Days of the week indicated by 0 (Sunday) though 6 (Saturday) that will be blacked out</td>
+    <td>[0,6]</td>
+    <td>array</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>blackOutDates</td>
+    <td></td>
+    <td>Date Ranges or individual dates in the following format: ['20 Mar 2014 - 1 May 2014', '28 Apr 2014'] that are blacked out or unselectable on the calendar. Typically holidays.</td>
+    <td>[]</td>
+    <td>array</td>
+  </tr>
+   <tr>
+    <td></td>
+     <td></td>
+     <td></td>
+     <td>required</td>
+     <td></td>
+     <td></td>
+     <td>"maxSearchDays",
+                        "minDays",
+                        "maxDays",
+                        "blackOutDays",
+                        "blackOutDates"</td>
+     <td></td>
+  </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td>animatedBanner</td>
+    <td></td>
+    <td></td>
+    <td>Settings for Animated Banner</td>
+    <td></td>
+    <td></td>
+  </tr>
+   <tr>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td>bannerImageURL</td>
+     <td></td>
+     <td>The Image URL of the animated banner</td>
+     <td>images/animated-banner@2x.png</td>
+     <td>string</td>
+  </tr>
+   <tr>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td>bannerURL</td>
+     <td></td>
+     <td>The URL of the animated banner</td>
+     <td>http://www.monitisemobilefi.com/</td>
+     <td>string</td>
+  </tr>
+   <tr>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td>bannerEnabled</td>
+     <td></td>
+     <td>Whether the banner is enabled or disabled</td>
+     <td>true</td>
+     <td>boolean</td>
+  </tr>
+   <tr>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td>inAppBrowserHeaderBackgroundColor</td>
+     <td></td>
+     <td>The color of the InAppbrowser header's background</td>
+     <td>#000000</td>
+     <td>string</td>
+  </tr>
+  <tr>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td>inAppBrowserBackButtonColor</td>
+     <td></td>
+     <td>The color of the back button in the InAppbrowser</td>
+     <td>#FFFFFF</td>
+     <td>string</td>
+  </tr>
+  <tr>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td>required</td>
+     <td></td>
+     <td></td>
+     <td>"bannerURL",
+                        "bannerEnabled",
+                        "bannerImageURL",
+                        "inAppBrowserHeaderBackgroundColor",
+                        "inAppBrowserBackButtonColor"</td>
+     <td></td>
+  </tr>
+   <tr>
+     <td></td>
+     <td></td>
+     <td>pendingTransactionsLink</td>
+     <td></td>
+     <td></td>
+     <td>Settings that determines if we show a link for transactions that are pending</td>
+     <td>true</td>
+     <td>boolean</td>
+  </tr>
+  <tr>
+     <td></td>
+     <td></td>
+     <td>required</td>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td>"accountListBehavior",
+                "defaultPageSize",
+                "accountsThreshold",
+                "inSearch",
+                "searchSettings",
+                "datePicker",
+                "animatedBanner",
+                "pendingTransactionsLink"</td>
+     <td></td>
+  </tr>
+  <tr>
+     <td>http</td>
+     <td>Settings used to configure interaction with Monitise Vantage REST API. IMPORTANT: 
+      These values must be configured properly or connection to the REST API will fail</td>
+     <td>apiServer</td>
+     <td></td>
+     <td></td>
+     <td>Specifies the REST API server to connect to for all requests</td>
+     <td></td>
+     <td></td>
+  </tr>
+  <tr>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td>protocol</td>
+     <td></td>
+     <td>REST API protocol to be used; generally this is http for testing and https for production</td>
+     <td>http</td>
+     <td>"enum": [
+                                "http",
+                                "https"
+                            ],</td>
+  </tr>
+  <tr>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td>host</td>
+     <td></td>
+     <td>REST API server host name or IP address (e.g. angricek.clairmail.com, 192.168.4.22, etc...)</td>
+     <td>angricek.clairmail.com</td>
+     <td>string</td>
+  </tr>
+  <tr>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td>port</td>
+     <td></td>
+     <td>REST API server port number; generally this is port 80 for testing (regular http) and 443 for production (regular SSL)</td>
+     <td>80</td>
+     <td>integer</td>
+  </tr>
+  <tr>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td>required</td>
+     <td></td>
+     <td></td>
+     <td>"protocol",
+                        "host",
+                        "port"</td>
+     <td></td>
+  </tr>
+  <tr>
+     <td></td>
+     <td></td>
+     <td>clientType</td>
+     <td></td>
+     <td></td>
+     <td>Optional value of the Client-Type header to pass in HTTP requests. NOTE: if the value is null, cordovaAutoDetect is used to negotiate an appropriate setting. Expected values are: BLACKBERRY, ANDROID, IPHONE, MOBILEWEB, WEBSERVICE, UNKNOWN, APPLETABLET, ANDROIDTABLET (but note that 'UNKNOWN' will be rejected by the REST API</td>
+     <td></td>
+     <td>string</td>
+  </tr>
+  <tr>
+     <td></td>
+     <td></td>
+     <td>clientVersion</td>
+     <td></td>
+     <td></td>
+     <td>Value of the Client-Version header indicating the build of this client app used to identify a release version and date of build</td>
+     <td>4.0.0</td>
+     <td>string</td>
+  </tr>
+  <tr>
+     <td></td>
+     <td></td>
+     <td>cordovaAutoDetectTypes</td>
+     <td></td>
+     <td></td>
+     <td>A optional mapping of Cordova platform detected types to Client-Type header values; these are only used if clientType is null. This is useful, for example within an integration module to allow smart-client to auto-detect IPHONE/ANDROID/BLACKBERRY and tablet to auto detect APPLETABLET/ANDROIDTABLET</td>
+     <td></td>
+     <td>string</td>
+  </tr>
+  <tr>
+     <td></td>
+     <td></td>
+     <td>tenantId</td>
+     <td></td>
+     <td></td>
+     <td>An ID that identifies the banking customer for this app; this is prepended to all REST API URLs after the `uriPrefix`</td>
+     <td>unknown-tenant-id</td>
+     <td>string</td>
+  </tr>
+  <tr>
+     <td></td>
+     <td></td>
+     <td>uriPrefix</td>
+     <td></td>
+     <td></td>
+     <td>A string prepended to all REST API URLs depending upon the server configuration. For bank of trust, this is usually `banking_rest_api`</td>
+     <td>banking_rest_api</td>
+     <td>string</td>
+  </tr>
+  <tr>
+     <td></td>
+     <td></td>
+     <td>required</td>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td>"apiServer",
+                "clientVersion",
+                "tenantId",
+                "uriPrefix"</td>
+     <td></td>
+  </tr>
+  <tr>
+     <td>httpAuthSignature</td>
+     <td>Settings to generate the Auth header used by the REST API</td>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td>oneOf": [
+                {
+                    "$ref": "#/definitions/httpAuthSignature"
+                }
+            ]</td>
+     <td></td>
+  </tr>
+  <tr>
+     <td>httpLocale</td>
+     <td>Adds locale related headers to HTTP requests to allow interoperability with Vantage REST API</td>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td>required:true</td>
+     <td>oneOf": [
+                {
+                    "$ref": "#/definitions/httpLocale"
+                }
+            ]</td>
+     <td></td>
+  </tr>
+  <tr>
+     <td>i18n</td>
+     <td></td>
+     <td>i18nDebug</td>
+     <td></td>
+     <td></td>
+     <td>Enables i18n debug mode. Every successful translation will be have '[]' around it. Unsuccessful tranlsation will be indicated by '*' </td>
+     <td>false</td>
+     <td>boolean</td>
+  </tr>
+  <tr>
+     <td></td>
+     <td></td>
+     <td>i18nConfig</td>
+     <td></td>
+     <td></td>
+     <td>Configure language files path: Module looks for files in the format: path/filePrefix-{{languageKey}}-fileSuffix</td>
+     <td></td>
+     <td></td>
+  </tr>
+  <tr>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td>path</td>
+     <td></td>
+     <td>Path of directory where language files are stored</td>
+     <td>i18n</td>
+     <td>string</td>
+  </tr>
+  <tr>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td>filePrefix</td>
+     <td></td>
+     <td>prefix used for all language files e.g.langauge-en.json, language-fr.json Prefix is 'language'</td>
+     <td>language</td>
+     <td>string</td>
+  </tr>
+  <tr>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td>fileSuffix</td>
+     <td></td>
+     <td>suffix for all language files</td>
+     <td>.json</td>
+     <td>string</td>
+  </tr>
+   <tr>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td>supportedLanguages</td>
+     <td></td>
+     <td>list of supported languages</td>
+     <td>  "en-US",
+                                "es-US",
+                                "fr-US"</td>
+     <td></td>
+  </tr>
+    <tr>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td>required</td>
+     <td></td>
+     <td></td>
+     <td>"path",
+                        "filePrefix",
+                        "fileSuffix"</td>
+     <td></td>
+  </tr>
+  <tr>
+     <td></td>
+     <td></td>
+     <td>defaultLanguage</td>
+     <td></td>
+     <td></td>
+     <td>Sets the default language for application</td>
+     <td>en-US</td>
+     <td>string</td>
+  </tr>
+  <tr>
+     <td></td>
+     <td></td>
+     <td>required</td>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td>"i18nDebug",
+                "i18nConfig",
+                "defaultLanguage"</td>
+     <td></td>
+  </tr>
+  <tr>
+     <td>locations</td>
+     <td>Settings for Mvp Ng Locations module.</td>
+     <td>locationListPageSize</td>
+     <td></td>
+     <td></td>
+     <td>The number of location list items shown in the list view at a time.</td>
+     <td>15</td>
+     <td>number</td>
+  </tr>
+  <tr>
+     <td></td>
+     <td></td>
+     <td>defaultMapLocations</td>
+     <td></td>
+     <td></td>
+     <td>The number of map markers shown in the map view at a time.</td>
+     <td>3</td>
+     <td>number</td>
+  </tr>
+  <tr>
+     <td></td>
+     <td></td>
+     <td>defaultLongitude</td>
+     <td></td>
+     <td></td>
+     <td>The initial longitudinal coordinate for the Google map's center.</td>
+     <td>""</td>
+     <td>string</td>
+  </tr>
+  <tr>
+     <td></td>
+     <td></td>
+     <td>defaultLatitude</td>
+     <td></td>
+     <td></td>
+     <td>The initial latitudinal coordinate for the Google map's center.</td>
+     <td>""</td>
+     <td>string</td>
+  </tr>
+   <tr>
+     <td></td>
+     <td></td>
+     <td>enableHighAccuracy</td>
+     <td></td>
+     <td></td>
+     <td>""</td>
+     <td>""</td>
+     <td>string</td>
+  </tr>
+  <tr>
+     <td></td>
+     <td></td>
+     <td>maximumAge</td>
+     <td></td>
+     <td></td>
+     <td>""</td>
+     <td>""</td>
+     <td>string</td>
+  </tr>
+  <tr>
+     <td></td>
+     <td></td>
+     <td>timeout</td>
+     <td></td>
+     <td></td>
+     <td>""</td>
+     <td>""</td>
+     <td>string</td>
+  </tr>
+  <tr>
+     <td></td>
+     <td></td>
+     <td>mapRefreshDistanceMiles</td>
+     <td></td>
+     <td></td>
+     <td>The distance in miles the user needs to drag the map to fetch new location markers.</td>
+     <td>1</td>
+     <td>number</td>
+  </tr>
+  <tr>
+     <td></td>
+     <td></td>
+     <td>locationsEnabled</td>
+     <td></td>
+     <td></td>
+     <td>Whether the locations feature is visible on the menu.</td>
+     <td>true</td>
+     <td>boolean</td>
+  </tr>
+  <tr>
+     <td></td>
+     <td></td>
+     <td>mapClientId</td>
+     <td></td>
+     <td></td>
+     <td>The client ID for the premier license of Google Maps.</td>
+     <td>0</td>
+     <td>number</td>
+  </tr>
+  <tr>
+     <td></td>
+     <td></td>
+     <td>mapChannel</td>
+     <td></td>
+     <td></td>
+     <td>The name of the bank that this deployment is for. Leave this blank if the bank has its own premier license.</td>
+     <td>""</td>
+     <td>string</td>
+  </tr>
+  <tr>
+     <td></td>
+     <td></td>
+     <td>required</td>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td>"locationListPageSize",
+                "defaultMapLocations",
+                "defaultLongitude",
+                "defaultLatitude",
+                "enableHighAccuracy",
+                "maximumAge",
+                "timeout",
+                "mapRefreshDistanceMiles",
+                "locationsEnabled"</td>
+     <td></td>
+  </tr>
+  <tr>
+     <td>mvpNgMessages</td>
+     <td></td>
+     <td>emergencyMessageEnabled</td>
+     <td></td>
+     <td></td>
+     <td>Default page size for show more functionality</td>
+     <td>true</td>
+     <td>boolean</td>
+  </tr>
+  <tr>
+     <td>preferences</td>
+     <td></td>
+     <td>supportedTimezones</td>
+     <td></td>
+     <td></td>
+     <td>Specifies an array of supported timezones</td>
+     <td>[
+                        {
+                            "id": "1",
+                            "key": "US/Hawaii",
+                            "abbreviation": "HST"
+                        },
+                        {
+                            "id": "2",
+                            "key": "US/Alaska",
+                            "abbreviation": "AKST",
+                            "dstAbbreviation": "AKDT"
+                        },
+                        {
+                            "id": "3",
+                            "key": "America/Los_Angeles",
+                            "abbreviation": "PST",
+                            "dstAbbreviation": "PDT"
+                        },
+                        {
+                            "id": "4",
+                            "key": "US/Arizona",
+                            "abbreviation": "MST"
+                        },
+                        {
+                            "id": "5",
+                            "key": "US/Mountain",
+                            "abbreviation": "MST",
+                            "dstAbbreviation": "MDT"
+                        },
+                        {
+                            "id": "6",
+                            "key": "America/Chicago",
+                            "abbreviation": "CST",
+                            "dstAbbreviation": "CDT"
+                        },
+                        {
+                            "id": "7",
+                            "key": "America/New_York",
+                            "abbreviation": "EST",
+                            "dstAbbreviation": "EDT"
+                        },
+                        {
+                            "id": "8",
+                            "key": "Canada/Pacific",
+                            "abbreviation": "PST",
+                            "dstAbbreviation": "PDT"
+                        },
+                        {
+                            "id": "9",
+                            "key": "Canada/Mountain",
+                            "abbreviation": "MST",
+                            "dstAbbreviation": "MDT"
+                        },
+                        {
+                            "id": "10",
+                            "key": "Canada/Central",
+                            "abbreviation": "CST",
+                            "dstAbbreviation": "CDT"
+                        },
+                        {
+                            "id": "11",
+                            "key": "Canada/Eastern",
+                            "abbreviation": "EST",
+                            "dstAbbreviation": "EDT"
+                        },
+                        {
+                            "id": "12",
+                            "key": "Canada/Atlantic",
+                            "abbreviation": "AST",
+                            "dstAbbreviation": "ADT"
+                        },
+                        {
+                            "id": "13",
+                            "key": "Canada/Newfoundland",
+                            "abbreviation": "NST",
+                            "dstAbbreviation": "NDT"
+                        }
+                    ]</td>
+     <td>array</td>
+  </tr>
+  <tr>
+     <td></td>
+     <td></td>
+     <td>payeesEnabled</td>
+     <td></td>
+     <td></td>
+     <td>Enable or disable the payees module</td>
+     <td>true</td>
+     <td>boolean</td>
+  </tr>
+  <tr>
+     <td></td>
+     <td></td>
+     <td>touchIdEnabled</td>
+     <td></td>
+     <td></td>
+     <td>Enable or disable touchId functionality</td>
+     <td>false</td>
+     <td>boolean</td>
+  </tr>
+  <tr>
+     <td></td>
+     <td></td>
+     <td>touchIdServiceName</td>
+     <td></td>
+     <td></td>
+     <td>The service name that touch id uses in the devices keychain</td>
+     <td>BankOfTrust</td>
+     <td>string</td>
+  </tr>
+  <tr>
+     <td></td>
+     <td></td>
+     <td>touchIdKey</td>
+     <td></td>
+     <td></td>
+     <td>The key name that touch id uses in the devices keychain</td>
+     <td>pin</td>
+     <td>string</td>
+  </tr>
+   <tr>
+     <td></td>
+     <td></td>
+     <td>passwordUpdateEnabled</td>
+     <td></td>
+     <td></td>
+     <td>Enable or disable Update password functionality</td>
+     <td>true</td>
+     <td>boolean</td>
+  </tr>
+   <tr>
+     <td></td>
+     <td></td>
+     <td>helpEnabled</td>
+     <td></td>
+     <td></td>
+     <td>Enable or disable Help settings</td>
+     <td>true</td>
+     <td>boolean</td>
+  </tr>
+   <tr>
+     <td></td>
+     <td></td>
+     <td>timezoneEnabled</td>
+     <td></td>
+     <td></td>
+     <td>Enable or disable Timezone settings</td>
+     <td>true</td>
+     <td>boolean</td>
+  </tr>
+   <tr>
+     <td></td>
+     <td></td>
+     <td>accountsEnabled</td>
+     <td></td>
+     <td></td>
+     <td>Enable or disable Accounts settings</td>
+     <td>true</td>
+     <td>boolean</td>
+  </tr>
+   <tr>
+     <td></td>
+     <td></td>
+     <td>textBankingEnabled</td>
+     <td></td>
+     <td></td>
+     <td>Enable or disable Text Banking settings</td>
+     <td>true</td>
+     <td>boolean</td>
+  </tr>
+   <tr>
+     <td></td>
+     <td></td>
+     <td>securityImageAndPhraseEnabled</td>
+     <td></td>
+     <td></td>
+     <td>Enable or disable Security Image and Phrase settings</td>
+    <td>true</td>
+     <td>boolean</td>
+  </tr>
+   <tr>
+     <td></td>
+     <td></td>
+     <td>securityQuestionsEnabled</td>
+     <td></td>
+     <td></td>
+     <td>Enable or disable Security Questions settings</td>
+     <td>true</td>
+     <td>boolean</td>
+  </tr>
+   <tr>
+     <td></td>
+     <td></td>
+     <td>required</td>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td>"supportedTimezones",
+                "payeesEnabled",
+                "touchIdEnabled",
+                "touchIdServiceName",
+                "touchIdKey",
+                "passwordUpdateEnabled",
+                "helpEnabled",
+                "timezoneEnabled",
+                "accountsEnabled",
+                "textBankingEnabled",
+                "securityImageAndPhraseEnabled",
+                "securityQuestionsEnabled"</td>
+     <td></td>
+  </tr>
+   <tr>
+     <td>productization</td>
+     <td></td>
+     <td>marketingEnabled</td>
+     <td></td>
+     <td></td>
+     <td>Whether marketing is enabled at a global level for all procuts</td>
+     <td>true</td>
+     <td>boolean</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>forceProductizationOnPinLogin</td>
+      <td></td>
+      <td></td>
+      <td>Whether marketing is enabled at a global level for all procuts</td>
+      <td>false</td>
+      <td>boolean</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>products</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Names of products (NOTE: you should probably NOT change these ... only very few banks actually would need this option)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>passthrough</td>
+      <td></td>
+      <td>passthrough product name</td>
+      <td>passthrough</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>basic</td>
+      <td></td>
+      <td>basic product name</td>
+      <td>basic</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>dda</td>
+      <td></td>
+      <td>dda product name</td>
+      <td>dda</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>transfer</td>
+      <td></td>
+      <td>transfer product name</td>
+      <td>transfer</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>billpay</td>
+      <td></td>
+      <td>billpay product name</td>
+      <td>billpay</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>fraud</td>
+      <td></td>
+      <td>fraud product name</td>
+      <td>fraud</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>rdc</td>
+      <td></td>
+      <td>rdc product name</td>
+      <td>rdc</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>p2p</td>
+      <td></td>
+      <td>p2p product name</td>
+      <td>p2p</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>required</td>
+      <td></td>
+      <td></td>
+      <td>"passthrough",
+                        "basic",
+                        "dda",
+                        "transfer",
+                        "billpay",
+                        "fraud",
+                        "rdc",
+                        "p2p"</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>required</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td> "marketingEnabled",
+                "products",
+                "forceProductizationOnPinLogin"</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>transfers</td>
+      <td>Transfer Module Settings</td>
+      <td>transferReview</td>
+      <td></td>
+      <td></td>
+      <td>Toggles Review step, Next becomes Submit and Confirmation page skipped</td>
+      <td>true</td>
+      <td>boolean</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>transfersEnabled</td>
+      <td></td>
+      <td></td>
+      <td>Enable or disable the transfers module</td>
+      <td>true</td>
+      <td>boolean</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>transfersRecentEnabled</td>
+      <td></td>
+      <td></td>
+      <td>Enable or disable the transfers recent tab</td>
+      <td>true</td>
+      <td>boolean</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>transfersScheduledEnabled</td>
+      <td></td>
+      <td></td>
+      <td>Enable or disable the transfers schedule tab</td>
+      <td>true</td>
+      <td>boolean</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>minDays</td>
+      <td></td>
+      <td></td>
+      <td>The number of days before a user is able to select a date. Should be less than the maxDays</td>
+      <td>0</td>
+      <td>integer</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>maxDays</td>
+      <td></td>
+      <td></td>
+      <td>The total number of days that user is able to select a date until. Should be greater than minDays</td>
+      <td>3650</td>
+      <td>integer</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>blackOutDays</td>
+      <td></td>
+      <td></td>
+      <td>Days of the week indicated by 0 (Sunday) though 6 (Saturday) that will be blacked out</td>
+      <td>[]</td>
+      <td>array</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>blackOutDates</td>
+      <td></td>
+      <td></td>
+      <td>Date Ranges or individual dates in the following format: ['20 Mar 2014 - 1 May 2014', '28 Apr 2014'] that are blacked out or unselectable on the calendar. Typically holidays.</td>
+      <td>[]</td>
+      <td>array</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>required</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>"transferReview",
+                "transfersEnabled",
+                "transfersRecentEnabled",
+                "transfersScheduledEnabled",
+                "minDays",
+                "maxDays",
+                "blackOutDays",
+                "blackOutDates"</td>
+      <td></td>
+    </tr>
+     <tr>
+      <td>utilities</td>
+      <td>Misc Utility services used by other smartclient modules</td>
+      <td>clientSession</td>
+      <td></td>
+      <td></td>
+      <td>Client session timeout specific properties</td>
+      <td></td>
+      <td></td>
+    </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>timeoutEnabled</td>
+      <td></td>
+      <td>flag denoting of client session timeout is enabled or not</td>
+      <td>true</td>
+      <td>boolean</td>
+    </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>timeoutInSeconds</td>
+      <td></td>
+      <td>how long the user can be inactive before session times out (in seconds)</td>
+      <td>300</td>
+      <td>integer</td>
+    </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>startEvent</td>
+      <td></td>
+      <td>the event that will cause the session timeout counter to begin</td>
+      <td>$authSessionStart</td>
+      <td>string</td>
+    </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>stopEvent</td>
+      <td></td>
+      <td>the event that will cause the session timeout counter to stop</td>
+      <td>$authSessionEnded</td>
+      <td>string</td>
+    </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>timeoutEvent</td>
+      <td></td>
+      <td>the event that will fire when the session expires</td>
+      <td>$softSignOut</td>
+      <td>string</td>
+    </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>timeoutMessage</td>
+      <td></td>
+      <td>the message we will send with the session timeout event</td>
+      <td>session.timeout.msg</td>
+      <td>string</td>
+    </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>required</td>
+      <td></td>
+      <td></td>
+      <td>"timeoutEnabled",
+                        "timeoutInSeconds",
+                        "startEvent",
+                        "stopEvent",
+                        "timeoutEvent",
+                        "timeoutMessage"</td>
+      <td></td>
+    </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td>defaultTimezone</td>
+      <td></td>
+      <td></td>
+      <td>default timezone if for some reason we cannot or do not retrieve it from preferences</td>
+      <td>America/Los_Angeles</td>
+      <td>string</td>
+    </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td>defaultCurrencyCode</td>
+      <td></td>
+      <td></td>
+      <td>Default Currency Code if for some reason we cannot or do not retrieve it from account</td>
+      <td>USD</td>
+      <td>string</td>
+    </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td>addTimeZoneToTimeStamps</td>
+      <td></td>
+      <td></td>
+      <td>This setting will add the timezone to all timestamps in the app</td>
+      <td>true</td>
+      <td>boolean</td>
+    </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td>required</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td> "clientSession",
+                "defaultTimezone",
+                "defaultCurrencyCode",
+                "addTimeZoneToTimeStamps"</td>
+      <td></td>
+    </tr>
+     <tr>
+      <td>enrollmentapp</td>
+      <td></td>
+      <td>staticAssetsPathPrefix</td>
+      <td></td>
+      <td></td>
+      <td>Path prefix for all static assets; should correspond to where the .war file will be deployed</td>
+      <td>""</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>displayDebugMessages</td>
+      <td></td>
+      <td></td>
+      <td>Whether to display debugging level messages in error blocks on screen visible in the UI</td>
+      <td>false</td>
+      <td>boolean</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>applicationType</td>
+      <td></td>
+      <td></td>
+      <td>denotes which type of application will be available, full - all of omnichannel, enrollment - enrollment +</td>
+      <td>full</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>enrollFlow</td>
+      <td></td>
+      <td></td>
+      <td>Configures the enrollment flow which sets up a users account</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>abandonFlowTargetState</td>
+      <td></td>
+      <td>Where the user should be directed if they abandon the enroll flow via $state.go()</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>state</td>
+      <td>The state name to send the user to</td>
+      <td>unauthenticated.enrollSuccess</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>params</td>
+      <td>(Optional) state parameters to be passed to $state.go() method as the second argument</td>
+      <td></td>
+      <td>object</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>options</td>
+      <td>(Optional) state options to be passed to $state.go() method as the third argument</td>
+      <td></td>
+      <td>object</td>
+    </tr>
+    <tr>
+      <td></td> 
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>required</td>
+      <td></td>
+      <td>state</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td> 
+      <td></td>
+      <td></td>
+      <td>finishFlowTargetState</td>
+      <td></td>
+      <td>Where the user should be directed once they successfully complete enrollment via $state.go()</td>
+      <td></td>
+      <td></td>
+    </tr>
+      <tr>
+      <td></td> 
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>state</td>
+      <td>The state name to send the user to</td>
+      <td>unauthenticated.enrollSuccess</td>
+      <td>string</td>
+    </tr>
+      <tr>
+      <td></td> 
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>params</td>
+      <td>(Optional) state parameters to be passed to $state.go() method as the second argument</td>
+      <td></td>
+      <td>object</td>
+    </tr>
+      <tr>
+      <td></td> 
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>options</td>
+      <td>(Optional) state options to be passed to $state.go() method as the third argument</td>
+      <td></td>
+      <td>object</td>
+    </tr>
+    <tr>
+      <td></td> 
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>required</td>
+      <td></td>
+      <td>state</td>
+      <td></td>
+    </tr>
+      <tr>
+      <td></td> 
+      <td></td>
+      <td></td>
+      <td>basic-steps</td>
+      <td></td>
+      <td>Defines the steps of the enrollment flow in terms of states that will be advanced to via $state.go()</td>
+      <td>[
+                                {
+                                    "state": "unauthenticated.enroll.confirmIdentity"
+                                },
+                                {
+                                    "state": "unauthenticated.enroll.createProfile"
+                                }
+                            ]</td>
+      <td>array</td>
+    </tr>
+      <tr>
+      <td></td> 
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>state</td>
+      <td>The state name to send the user to</td>
+      <td></td>
+      <td>string</td>
+    </tr>
+      <tr>
+      <td></td> 
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>params</td>
+      <td>(Optional) state parameters to be passed to $state.go() method as the second argument</td>
+      <td></td>
+      <td>object</td>
+    </tr>
+      <tr>
+      <td></td> 
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>options</td>
+      <td>(Optional) state options to be passed to $state.go() method as the third argument</td>
+      <td></td>
+      <td>object</td>
+    </tr>
+      <tr>
+      <td></td> 
+      <td></td>
+      <td></td>
+      <td>mfa-sitekey-steps</td>
+      <td></td>
+      <td>Defines the steps of the enrollment flow in terms of states that will be advanced to via $state.go()</td>
+      <td>default": [
+                                {
+                                    "state": "unauthenticated.enroll.confirmIdentity"
+                                },
+                                {
+                                    "state": "unauthenticated.enroll.createProfile"
+                                },
+                                {
+                                    "state": "unauthenticated.enroll.setupSecurity"
+                                }
+                            ]</td>
+      <td>array</td>
+    </tr>
+      <tr>
+      <td></td> 
+      <td></td>
+      <td></td>
+      <td>mfa-nositekey-steps</td>
+      <td></td>
+      <td>Defines the steps of the enrollment flow in terms of states that will be advanced to via $state.go()</td>
+      <td>[
+                                {
+                                    "state": "unauthenticated.enroll.confirmIdentity"
+                                },
+                                {
+                                    "state": "unauthenticated.enroll.createProfile"
+                                },
+                                {
+                                    "state": "unauthenticated.enroll.setupSecurity"
+                                }
+                            ]</td>
+      <td>array</td>
+    </tr>
+      <tr>
+      <td></td> 
+      <td></td>
+      <td></td>
+      <td>otp-steps</td>
+      <td></td>
+      <td>Defines the steps of the enrollment OTP flow in terms of states that will be advanced to via $state.go()</td>
+      <td>[
+                                {
+                                    "state": "unauthenticated.enroll.confirmIdentity"
+                                },
+                                {
+                                    "state": "unauthenticated.enroll.createProfile"
+                                }
+                            ]</td>
+      <td>array</td>
+    </tr>
+      <tr>
+      <td></td> 
+      <td></td>
+      <td></td>
+      <td>required</td>
+      <td></td>
+      <td></td>
+      <td>"abandonFlowTargetState",
+                        "finishFlowTargetState",
+                        "basic-steps",
+                        "mfa-sitekey-steps",
+                        "mfa-nositekey-steps"</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td> 
+      <td></td>
+      <td>authenticationFlow</td>
+      <td></td>
+      <td></td>
+      <td>Configures the authentication flow which sets up a users account</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td> 
+      <td></td>
+      <td></td>
+      <td>abandonFlowTargetState</td>
+      <td></td>
+      <td>Where the user should be directed if they abandon the authentication flow via $state.go()</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td> 
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>state</td>
+      <td>The state name to send the user to</td>
+      <td>unauthenticated.marketingLanding</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td></td> 
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>params</td>
+      <td>(Optional) state parameters to be passed to $state.go() method as the second argument</td>
+      <td></td>
+      <td>object</td>
+    </tr>
+    <tr>
+      <td></td> 
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>options</td>
+      <td>(Optional) state options to be passed to $state.go() method as the third argument</td>
+      <td></td>
+      <td>object</td>
+    </tr>
+    <tr>
+      <td></td> 
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>required</td>
+      <td></td>
+      <td>state</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td> 
+      <td></td>
+      <td></td>
+      <td>finishFlowTargetState</td>
+      <td></td>
+      <td>Where the user should be directed once they successfully complete authentication via $state.go()</td>
+      <td></td>
+      <td>object</td>
+    </tr>
+    <tr>
+      <td></td> 
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>state</td>
+      <td>The state name to send the user to</td>
+      <td>unauthenticated.dashboard</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td></td> 
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>params</td>
+      <td>(Optional) state parameters to be passed to $state.go() method as the second argument</td>
+      <td></td>
+      <td>object</td>
+    </tr>
+    <tr>
+      <td></td> 
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>options</td>
+      <td>(Optional) state options to be passed to $state.go() method as the third argument</td>
+      <td></td>
+      <td>object</td>
+    </tr>
+     <tr>
+      <td></td> 
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>required</td>
+      <td></td>
+      <td>state</td>
+      <td></td>
+    </tr>
+     <tr>
+      <td></td> 
+      <td></td>
+      <td></td>
+      <td>basic-steps</td>
+      <td></td>
+      <td>Defines the steps of the authentication flow in terms of states that will be advanced to via $state.go()</td>
+      <td>"state": "unauthenticated.basicLogin"</td>
+      <td>array</td>
+    </tr>
+    <tr>
+      <td></td> 
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>state</td>
+      <td>The state name to send the user to</td>
+      <td></td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td></td> 
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>params</td>
+      <td>(Optional) state parameters to be passed to $state.go() method as the second argument</td>
+      <td></td>
+      <td>object</td>
+    </tr>
+    <tr>
+      <td></td> 
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>options</td>
+      <td>(Optional) state options to be passed to $state.go() method as the third argument</td>
+      <td></td>
+      <td>object</td>
+    </tr>
+     <tr>
+      <td></td> 
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>required</td>
+      <td></td>
+      <td>state</td>
+      <td></td>
+    </tr>
+     <tr>
+      <td></td> 
+      <td></td>
+      <td></td>
+      <td>mfa-sitekey-steps</td>
+      <td></td>
+      <td>Defines the steps of the authentication flow in terms of states that will be advanced to via $state.go()</td>
+      <td>[
+                                {
+                                    "state": "unauthenticated.auth.login"
+                                },
+                                {
+                                    "state": "unauthenticated.auth.question"
+                                },
+                                {
+                                    "state": "unauthenticated.auth.passphrase"
+                                }
+                            ]</td>
+      <td>array</td>
+    </tr>
+     <tr>
+      <td></td> 
+      <td></td>
+      <td></td>
+      <td>mfa-nositekey-steps</td>
+      <td></td>
+      <td>Defines the steps of the authentication flow in terms of states that will be advanced to via $state.go()</td>
+      <td>[
+                                {
+                                    "state": "unauthenticated.auth.noSKLogin"
+                                },
+                                {
+                                    "state": "unauthenticated.auth.question"
+                                }
+                            ]</td>
+      <td>array</td>
+    </tr>
+     <tr>
+      <td></td> 
+      <td></td>
+      <td></td>
+      <td>otp-steps</td>
+      <td></td>
+      <td>Defines the steps of the OTP authentication flow in terms of states that will be advanced to via $state.go()</td>
+      <td>[
+                                {
+                                    "state": "unauthenticated.auth.otpLogin"
+                                },
+                                {
+                                    "state": "unauthenticated.auth.otpCode"
+                                }
+                            ]</td>
+      <td>array</td>
+    </tr>
+     <tr>
+      <td></td> 
+      <td></td>
+      <td></td>
+      <td>required</td>
+      <td></td>
+      <td></td>
+      <td>"abandonFlowTargetState",
+                        "finishFlowTargetState",
+                        "basic-steps",
+                        "mfa-sitekey-steps",
+                        "mfa-nositekey-steps",
+                        "otp-steps"</td>
+      <td></td>
+    </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td>mfaNumberOfQuestions</td>
+      <td></td> 
+      <td></td>
+      <td>How many MFA questions should the user be prompted to create</td>
+      <td>3</td>
+      <td>integer</td>
+    </tr>
+     <tr>
+      <td></td> 
+      <td></td>
+      <td>createCredentialsEnabled</td>
+      <td></td> 
+      <td></td>
+      <td>Flag that enables or disables enrollment functionality</td>
+      <td>true</td>
+      <td>boolean</td>
+    </tr>
+       <tr>
+      <td></td> 
+      <td></td>
+      <td>forgotUsernameEnabled</td>
+      <td></td>
+      <td></td>
+      <td>If forgot username functionality is enabled</td>
+      <td>true</td>
+      <td>boolean</td>
+    </tr>
+       <tr>
+      <td></td> 
+      <td></td>
+      <td>forgotPasswordEnabled</td>
+      <td></td>
+      <td></td>
+      <td>if forgot password functionality is enabled</td>
+      <td>true</td>
+      <td>boolean</td>
+    </tr>
+       <tr>
+      <td></td> 
+      <td></td>
+      <td>androidAppLink</td>
+      <td></td>
+      <td></td>
+      <td>Link to this app for the Google Play store</td>
+      <td>"#"</td>
+      <td>string</td>
+    </tr>
+       <tr>
+      <td></td> 
+      <td></td>
+      <td>iosAppLink</td>
+      <td></td>
+      <td></td>
+      <td>Link to this app for the Apple App store</td>
+      <td>"#"</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td></td> 
+      <td></td>
+      <td>rememberUsernameEnabled</td>
+      <td></td>
+      <td></td>
+      <td>Enable the remember username functionality</td>
+      <td>true</td>
+      <td>boolean</td>
+    </tr>
+    <tr>
+      <td></td> 
+      <td></td>
+      <td>defaultSupportedLanguages</td>
+      <td></td>
+      <td></td>
+      <td>Default Supported Languages</td>
+      <td>{
+                        "22": {
+                            "displayName": "English (US)",
+                            "locale": "en_US",
+                            "messageKey": "language.us.en"
+                        },
+                        "23": {
+                            "displayName": "French",
+                            "locale": "fr_US",
+                            "messageKey": "language.us.fr"
+                        },
+                        "24": {
+                            "displayName": "Spanish",
+                            "locale": "es_US",
+                            "messageKey": "language.us.es"
+                        }
+                    }</td>
+      <td>object</td>
+    </tr>
+    <tr>
+      <td></td> 
+      <td></td>
+      <td>rememberUsernameDefault</td>
+      <td></td>
+      <td></td>
+      <td>default state for the remember username functionality</td>
+      <td>true</td>
+      <td>boolean</td>
+    </tr>
+    <tr>
+      <td></td> 
+      <td></td>
+      <td>preferenceDefault</td>
+      <td></td>
+      <td></td>
+      <td>Default selected preference: available values: null, security, language, timezone, account</td>
+      <td>security</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td></td> 
+      <td></td>
+      <td>navigation</td>
+      <td></td>
+      <td></td>
+      <td>Top level navigation items and their visibility status, this is used in navigation-ui-service, it will fitler after applicationType</td>
+      <td>{
+                        "dashboard": {
+                            "enabled": true
+                        },
+                        "transfer": {
+                            "enabled": true
+                        },
+                        "payments": {
+                            "enabled": true
+                        },
+                        "alerts": {
+                            "enabled": true
+                        },
+                        "preferences": {
+                            "enabled": true
+                        },
+                        "more": {
+                            "enabled": true
+                        },
+                        "help": {
+                            "enabled": true
+                        },
+                        "contactUs": {
+                            "enabled": true
+                        },
+                        "privacyPolicy": {
+                            "enabled": true
+                        },
+                        "locations": {
+                            "enabled": true
+                        }
+                    }</td>
+      <td>object</td>
+    </tr>
+    <tr>
+      <td></td> 
+      <td></td>
+      <td>otpCounterTime</td>
+      <td></td>
+      <td></td>
+      <td>Number os seconds set for the OTP counter.</td>
+      <td>60</td>
+      <td>integer</td>
+    </tr>
+     <tr>
+      <td></td> 
+      <td></td>
+      <td>allowDisableAccount</td>
+      <td></td>
+      <td></td>
+      <td>This flag makes disable an account option visible to user</td>
+      <td>true</td>
+      <td>boolean</td>
+    </tr>
+     <tr>
+      <td></td> 
+      <td></td>
+      <td>allowDisablePayee</td>
+      <td></td>
+      <td></td>
+      <td>This flag makes disable a payee option visible to user</td>
+      <td>true</td>
+      <td>boolean</td>
+    </tr>
+     <tr>
+      <td></td> 
+      <td></td>
+      <td>keepAliveUrl</td>
+      <td></td>
+      <td></td>
+      <td>URL that the keep alive ping should contact, if set to blank or # no ping will occur</td>
+      <td>"#"</td>
+      <td>string</td>
+    </tr>
+     <tr>
+      <td></td> 
+      <td></td>
+      <td>required</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>  "staticAssetsPathPrefix",
+                "displayDebugMessages",
+                "applicationType",
+                "enrollFlow",
+                "mfaNumberOfQuestions",
+                "createCredentialsEnabled",
+                "forgotUsernameEnabled",
+                "forgotPasswordEnabled",
+                "keepAliveUrl"</td>
+      <td></td>
+    </tr>
+     <tr>
+      <td>required</td> 
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>"alerts",
+        "mvpAuth",
+        "billPay",
+        "payees",
+        "cordovaPushNotification",
+        "mvpNgDda",
+        "http",
+        "httpAuthSignature",
+        "httpLocale",
+        "i18n",
+        "locations",
+        "preferences",
+        "productization",
+        "transfers",
+        "utilities",
+        "enrollmentApp"</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>definitions</td> 
+      <td></td>
+      <td>httpAuthSignature</td>
+      <td></td>
+      <td></td>
+      <td>authentication core settings</td>
+      <td></td>
+      <td>object</td>
+    </tr>
+    <tr>
+      <td></td> 
+      <td></td>
+      <td></td>
+      <td>authConsumerKey</td>
+      <td></td>
+      <td>Consumer key used in auth signature</td>
+      <td>abcd</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td></td> 
+      <td></td>
+      <td></td>
+      <td>authHeaderName</td>
+      <td></td>
+      <td>Name of the authentication header to be assigned with the generated auth header</td>
+      <td>Auth</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td></td> 
+      <td></td>
+      <td></td>
+      <td>authSignatureMethod</td>
+      <td></td>
+      <td>The cryptographic method for signing, e.g. SHA-256</td>
+      <td>RSA-SHA256</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td></td> 
+      <td></td>
+      <td></td>
+      <td>authVersion</td>
+      <td></td>
+      <td>Version of authorization algorythm API on server to be used</td>
+      <td>1.0</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td></td> 
+      <td></td>
+      <td></td>
+      <td>consumerKey</td>
+      <td></td>
+      <td>Consumer key used in signing</td>
+      <td>abcd</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td></td> 
+      <td></td>
+      <td></td>
+      <td>consumerSecret</td>
+      <td></td>
+      <td>Consumer secret key in signing; this is like the public key from an ssh keypair</td>
+      <td>-----BEGIN RSA PRIVATE KEY-----\nMIICWwIBAAKBgQDRhGF7X4A0ZVlEg594WmODVVUIiiPQs04a
+        Lmvfg8SborHss5gQ\nXu0aIdUT6nb5rTh5hD2yfpF2WIW6M8z0WxRhwicgXwi80H1aLPf6lEPPLvN29EhQ
+        \nNjBpkFkAJUbS8uuhJEeKw0cE49g80eBBF4BCqSL6PFQbP9/rByxdxEoAIQIDAQAB\nAoGAA9/q3Zk6ib
+        2GFRpKDLO/O2KMnAfR+b4XJ6zMGeoZ7Lbpi3MW0Nawk9ckVaX0\nZVGqxbSIX5Cvp/yjHHpww+QbUFrw/g
+        CjLiiYjM9E8C3uAF5AKJ0r4GBPl4u8K4bp\nbXeSxSB60/wPQFiQAJVcA5xhZVzqNuF3EjuKdHsw+dk+dP
+        ECQQDubX/lVGFgD/xY\nuchz56Yc7VHX+58BUkNSewSzwJRbcueqknXRWwj97SXqpnYfKqZq78dnEF10SW
+        sr\n/NMKi+7XAkEA4PVqDv/OZAbWr4syXZNv/Mpl4r5suzYMMUD9U8B2JIRnrhmGZPzL\nx23N9J4hEJ+X
+        h8tSKVc80jOkrvGlSv+BxwJAaTOtjA3YTV+gU7Hdza53sCnSw/8F\nYLrgc6NOJtYhX9xqdevbyn1lkU0z
+        Pr8mPYg/F84m6MXixm2iuSz8HZoyzwJARi2p\naYZ5/5B2lwroqnKdZBJMGKFpUDn7Mb5hiSgocxnvMkv6
+        NjT66Xsi3iYakJII9q8C\nMa1qZvT/cigmdbAh7wJAQNXyoizuGEltiSaBXx4H29EdXNYWDJ9SS5f070BR
+        bAIl\ndqRh3rcNvpY6BKJqFapda1DjdcncZECMizT/GMrc1w==\n-----END RSA PRIVATE KEY-----</td>
+      <td>string</td>
+    </tr>
+     <tr>
+      <td></td> 
+      <td></td>
+      <td></td>
+      <td>tokenSecret</td>
+      <td></td>
+      <td>Token secret used in signing</td>
+      <td>mnop</td>
+      <td>string</td>
+    </tr>
+     <tr>
+      <td></td> 
+      <td></td>
+      <td></td>
+      <td>urlPatterns</td>
+      <td></td>
+      <td>list of patterns to be signed with the auth signature, e.g. anything with /api/ </td>
+      <td>[
+                        "rest_api",
+                        "mvp-csr"
+                    ]</td>
+      <td>array</td>
+    </tr>
+    <tr>
+      <td></td> 
+      <td></td>
+      <td>required</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td> "authConsumerKey",
+                "authHeaderName",
+                "authSignatureMethod",
+                "authVersion",
+                "consumerKey",
+                "consumerSecret",
+                "tokenSecret",
+                "urlPatterns"</td>
+      <td></td>
+    </tr>
+     <tr>
+      <td></td> 
+      <td></td>
+      <td>httpLocale</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+     <tr>
+      <td></td> 
+      <td></td>
+      <td></td>
+      <td>preferredLocale</td>
+      <td></td>
+      <td></td>
+      <td>en_US</td>
+      <td>string</td>
+    </tr>
+     <tr>
+      <td></td> 
+      <td></td>
+      <td></td>
+      <td>fallbackLocales</td>
+      <td></td>
+      <td></td>
+      <td>[
+                        "en-US",
+                        "en"
+                    ]</td>
+      <td>array</td>
+    </tr>
+     <tr>
+      <td></td> 
+      <td></td>
+      <td></td>
+      <td>fallbackLocaleQuality</td>
+      <td></td>
+      <td></td>
+      <td>0.8</td>
+      <td>number</td>
+    </tr>
+     <tr>
+      <td></td> 
+      <td></td>
+      <td>required</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td> "preferredLocale",
+                "fallbackLocales",
+                "fallbackLocaleQualit</td>
+      <td></td>
+    </tr>
+</table>
+</body>
+</html>

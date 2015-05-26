@@ -1,0 +1,1542 @@
+{
+    "title": "mvpNgHttp settings schema",
+    "description": "Settings schema for Vantage REST API HTTP header configuration",
+    "type": "object",
+    "properties": {
+        "alerts": {
+            "description": "Settings for alerts feature",
+            "type": "object",
+            "properties": {
+                "pageSize": {
+                    "description": "The number of alerts shown in the list view at a time.",
+                    "type": "number",
+                    "default": 15
+                },
+                "paramKeys": {
+                    "description": "Actionable alerts parameter keys",
+                    "type": "string",
+                    "default": ",fromAccountDisplayName,toAccountNickname,transferAmount,condition,transactionAmount,merchantName,merchantCity,amount,biller,dueDate,transactionFee,billerName,"
+                },
+                "alertsEnabled": {
+                    "description": "Enable/disable alerts",
+                    "type": "boolean",
+                    "default": true
+                },
+                "actionableAlertsEnabled": {
+                    "description": "Enable/disable actionable alerts",
+                    "type": "boolean",
+                    "default": true
+                },
+                "alertHistoryEnabled": {
+                    "description": "Enable/disable alert history",
+                    "type": "boolean",
+                    "default": true
+                },
+                "generalAlertsEnabled": {
+                    "description": "Enable/disable general alerts",
+                    "type": "boolean",
+                    "default": true
+                },
+                "accountAlertsEnabled": {
+                    "description": "Enable/disable account alerts",
+                    "type": "boolean",
+                    "default": true
+                },
+                "alertPrefsEnabled": {
+                    "description": "Enable/disable alert preferences",
+                    "type": "boolean",
+                    "default": true
+                },
+                "datePicker": {
+                    "description": "Search date picker settings",
+                    "type": "object",
+                    "properties": {
+                        "maxSearchDays": {
+                            "description": "The maximum days to search before today's date. Used on search page",
+                            "type": "integer",
+                            "default": 365
+                        },
+                        "minDays": {
+                            "description": "The number of days before a user is able to select a date. Should be less than the maxDays",
+                            "type": "integer",
+                            "default": 0
+                        },
+                        "maxDays": {
+                            "description": "The total number of days that user is able to select a date until. Should be greater than minDays",
+                            "type": "integer",
+                            "default": 30
+                        },
+                        "blackOutDays": {
+                            "description": "Days of the week indicated by 0 (Sunday) though 6 (Saturday) that will be blacked out",
+                            "type": "array",
+                            "default": []
+                        },
+                        "blackOutDates": {
+                            "description": "Date Ranges or individual dates in the following format: ['20 Mar 2014 - 1 May 2014', '28 Apr 2014'] that are blacked out or unselectable on the calendar. Typically holidays. ",
+                            "type": "array",
+                            "default": []
+                        },
+                        "isAlertCalendar": {
+                            "description": "Configures datepicker to work for alerts dnd ",
+                            "type": "boolean",
+                            "default": true
+                        }
+                    },
+                    "required": [
+                        "maxSearchDays",
+                        "minDays",
+                        "maxDays",
+                        "blackOutDays",
+                        "blackOutDates",
+                        "isAlertCalendar"
+                    ]
+                }
+            },
+            "required": [
+                "pageSize",
+                "paramKeys"
+            ]
+        },
+        "mvpAuth": {
+            "type": "object",
+            "properties": {
+                "authServiceName": {
+                    "type": "string",
+                    "description": "basic - enable basic auth, mfa-sitekey - enable mfa with site key auth, mfa-nositekey - enable mfa without site key auth",
+                    "default": "mfa-sitekey"
+                },
+                "passcodeEnabled": {
+                    "type": "boolean",
+                    "description": "authBasicEventListener - Enable Basic Auth Authentication, mFAEventListener - Enable MFA Authentication, passcodeEventListener - Enable Passcode Authentication",
+                    "default": false
+                },
+                "required": [
+                    "authServiceNames",
+                    "passcodeEnabled"
+                ]
+            }
+        },
+        "billPay": {
+            "description": "Transfer Module Settings",
+            "type": "object",
+            "properties": {
+                "paymentReview": {
+                    "description": "Toggles Review step, Next becomes Submit and Confirmation page skipped",
+                    "type": "boolean",
+                    "default": true
+                },
+                "paymentsEnabled": {
+                    "description": "Enable or disable the payments module",
+                    "type": "boolean",
+                    "default": true
+                },
+                "paymentsRecentEnabled": {
+                    "description": "Enable or disable the payments recent tab",
+                    "type": "boolean",
+                    "default": true
+                },
+                "paymentsScheduledEnabled": {
+                    "description": "Enable or disable the payments schedule tab",
+                    "type": "boolean",
+                    "default": true
+                },
+                "minDays": {
+                    "description": "The number of days before a user is able to select a date. Should be less than the maxDays",
+                    "type": "integer",
+                    "default": 0
+                },
+                "maxDays": {
+                    "description": "The total number of days that user is able to select a date until. Should be greater than minDays",
+                    "type": "integer",
+                    "default": 3650
+                },
+                "blackOutDays": {
+                    "description": "Days of the week indicated by 0 (Sunday) though 6 (Saturday) that will be blacked out",
+                    "type": "array",
+                    "default": [
+                        0,
+                        6
+                    ]
+                },
+                "blackOutDates": {
+                    "description": "Date Ranges or individual dates in the following format: ['20 Mar 2014 - 1 May 2014', '28 Apr 2014'] that are blacked out or unselectable on the calendar. Typically holidays. ",
+                    "type": "array",
+                    "default": [
+                        "2/16/2015",
+                        "2/15/2016",
+                        "2/20/2017",
+                        "2/19/2018",
+                        "10/12/2015",
+                        "10/10/2016",
+                        "10/9/2017",
+                        "10/8/2018"
+                    ]
+                }
+            },
+            "required": [
+                "paymentReview",
+                "paymentsEnabled",
+                "paymentsRecentEnabled",
+                "paymentsScheduledEnabled",
+                "minDays",
+                "maxDays",
+                "blackOutDays",
+                "blackOutDates"
+            ]
+        },
+        "payees": {
+            "description": "Payees Settings",
+            "type": "object",
+            "properties": {
+                "defaultPageSize": {
+                    "description": "Default page size for show more functionality",
+                    "type": "integer",
+                    "default": 15
+                }
+            },
+            "required": [
+                "defaultPageSize"
+            ]
+        },
+        "cordovaPushNotification": {
+            "description": "Cordova Push Notification Settings",
+            "type": "object",
+            "properties": {
+                "android": {
+                    "description": "Push Notification Settings for Android",
+                    "type": "object",
+                    "properties": {
+                        "senderID": {
+                            "description": "Android Sender ID for Push notification",
+                            "type": "string",
+                            "default": "1047466433565"
+                        }
+                    },
+                    "required": [
+                        "senderID"
+                    ]
+                }
+            },
+            "required": [
+                "android"
+            ]
+        },
+        "mvpNgDda": {
+            "description": "Settings for Mvp Ng DDA Module Transaction Settings",
+            "type": "object",
+            "properties": {
+                "accountListBehavior": {
+                    "description": "Settings for different list display Settings",
+                    "type": "object",
+                    "properties": {
+                        "accounts": {
+                            "description": "Accounts list accordion starting state",
+                            "type": "string",
+                            "default": "open"
+                        },
+                        "alerts": {
+                            "description": "Alert list accordion starting state",
+                            "type": "string",
+                            "default": "first"
+                        },
+                        "default": {
+                            "description": "Default list accordion starting state",
+                            "type": "string",
+                            "default": "open"
+                        },
+                        "deposit": {
+                            "description": "Deposit list accordion starting state",
+                            "type": "string",
+                            "default": "DDA"
+                        },
+                        "payment": {
+                            "description": "Payment list accordion starting state",
+                            "type": "string",
+                            "default": "first"
+                        },
+                        "transfer": {
+                            "description": "Transfer Settings list accordion starting state",
+                            "type": "string",
+                            "default": "DDA"
+                        }
+                    },
+                    "required": [
+                        "default"
+                    ]
+                },
+                "defaultPageSize": {
+                    "description": "Default page size for show more functionality and should be at least a value of 10",
+                    "type": "integer",
+                    "default": 15,
+                    "minimum": 10
+                },
+                "accountsThreshold": {
+                    "description": "The maximum number of accounts to be used for carousel view, otherwise we use a list view",
+                    "type": "integer",
+                    "default": 5
+                },
+                "inSearch": {
+                    "description": "Enable search",
+                    "type": "boolean",
+                    "default": false
+                },
+                "accountTypeNames": {
+                    "description": "Names for the diferrent types of accounts",
+                    "type": "object",
+                    "properties": {
+                        "CHK": {
+                            "description": "CHK to Checking Account",
+                            "type": "string",
+                            "default": "Checking Account"
+                        },
+                        "CRD": {
+                            "description": "CRD to Credit Account",
+                            "type": "string",
+                            "default": "Credit Account"
+                        },
+                        "SAV": {
+                            "description": "SAV to Savings Account",
+                            "type": "string",
+                            "default": "Savings Account"
+                        }
+                    },
+                    "required": [
+                        "CHK",
+                        "CRD",
+                        "SAV"
+                    ]
+                },
+                "searchSettings": {
+                    "description": "Settings related to transaction search",
+                    "type": "object",
+                    "properties": {
+                        "searchEnabled": {
+                            "description": "Whether the user is able to search transactions",
+                            "type": "boolean",
+                            "default": true
+                        },
+                        "searchByAmountEnabled": {
+                            "description": "The option to search by amount is enabled",
+                            "type": "boolean",
+                            "default": true
+                        },
+                        "searchByCheckEnabled": {
+                            "description": "The option to search by check is enabled",
+                            "type": "boolean",
+                            "default": true
+                        },
+                        "searchByDateEnabled": {
+                            "description": "The option to search by date is enabled",
+                            "type": "boolean",
+                            "default": true
+                        }
+                    },
+                    "required": [
+                        "searchEnabled",
+                        "searchByAmountEnabled",
+                        "searchByCheckEnabled",
+                        "searchByDateEnabled"
+                    ]
+                },
+                "datePicker": {
+                    "description": "Search date picker settings",
+                    "type": "object",
+                    "properties": {
+                        "maxSearchDays": {
+                            "description": "The maximum days to search before today's date. Used on search page",
+                            "type": "integer",
+                            "default": 365
+                        },
+                        "minDays": {
+                            "description": "The number of days before a user is able to select a date. Should be less than the maxDays",
+                            "type": "integer",
+                            "default": 0
+                        },
+                        "maxDays": {
+                            "description": "The total number of days that user is able to select a date until. Should be greater than minDays",
+                            "type": "integer",
+                            "default": 30
+                        },
+                        "blackOutDays": {
+                            "description": "Days of the week indicated by 0 (Sunday) though 6 (Saturday) that will be blacked out",
+                            "type": "array",
+                            "default": [
+                                0,
+                                6
+                            ]
+                        },
+                        "blackOutDates": {
+                            "description": "Date Ranges or individual dates in the following format: ['20 Mar 2014 - 1 May 2014', '28 Apr 2014'] that are blacked out or unselectable on the calendar. Typically holidays. ",
+                            "type": "array",
+                            "default": []
+                        }
+                    },
+                    "required": [
+                        "maxSearchDays",
+                        "minDays",
+                        "maxDays",
+                        "blackOutDays",
+                        "blackOutDates"
+                    ]
+                },
+                "animatedBanner": {
+                    "description": "Settings for Animated Banner",
+                    "type": "object",
+                    "properties": {
+                        "bannerImageURL": {
+                            "description": "The Image URL of the animated banner",
+                            "type": "string",
+                            "default": "images/animated-banner@2x.png"
+                        },
+                        "bannerURL": {
+                            "description": "The URL of the animated banner",
+                            "type": "string",
+                            "default": "http://www.monitisemobilefi.com/"
+                        },
+                        "bannerEnabled": {
+                            "description": "Whether the banner is enabled or disabled",
+                            "type": "boolean",
+                            "default": true
+                        },
+                        "inAppBrowserHeaderBackgroundColor": {
+                            "description": "The color of the InAppbrowser header's background",
+                            "type": "string",
+                            "default": "#000000"
+                        },
+                        "inAppBrowserBackButtonColor": {
+                            "description": "The color of the back button in the InAppbrowser",
+                            "type": "string",
+                            "default": "#FFFFFF"
+                        }
+                    },
+                    "required": [
+                        "bannerURL",
+                        "bannerEnabled",
+                        "bannerImageURL",
+                        "inAppBrowserHeaderBackgroundColor",
+                        "inAppBrowserBackButtonColor"
+                    ]
+                },
+                "pendingTransactionsLink": {
+                    "description": "Settings that determines if we show a link for transactions that are pending",
+                    "type": "boolean",
+                    "default": true
+                }
+            },
+            "required": [
+                "accountListBehavior",
+                "defaultPageSize",
+                "accountsThreshold",
+                "inSearch",
+                "searchSettings",
+                "datePicker",
+                "animatedBanner",
+                "pendingTransactionsLink"
+            ]
+        },
+        "http": {
+            "description": "Settings used to configure interaction with Monitise Vantage REST API. IMPORTANT: These values must be configured properly or connection to the REST API will fail",
+            "type": "object",
+            "properties": {
+                "apiServer": {
+                    "type": "object",
+                    "description": "Specifies the REST API server to connect to for all requests",
+                    "default": {},
+                    "properties": {
+                        "protocol": {
+                            "enum": [
+                                "http",
+                                "https"
+                            ],
+                            "description": "REST API protocol to be used; generally this is http for testing and https for production",
+                            "default": "http"
+                        },
+                        "host": {
+                            "type": "string",
+                            "description": "REST API server host name or IP address (e.g. angricek.clairmail.com, 192.168.4.22, etc...)",
+                            "default": "angricek.clairmail.com"
+                        },
+                        "port": {
+                            "type": "integer",
+                            "description": "REST API server port number; generally this is port 80 for testing (regular http) and 443 for production (regular SSL)",
+                            "default": 80
+                        }
+                    },
+                    "required": [
+                        "protocol",
+                        "host",
+                        "port"
+                    ]
+                },
+                "clientType": {
+                    "type": "string",
+                    "description": "Optional value of the Client-Type header to pass in HTTP requests. NOTE: if the value is null, cordovaAutoDetect is used to negotiate an appropriate setting. Expected values are: BLACKBERRY, ANDROID, IPHONE, MOBILEWEB, WEBSERVICE, UNKNOWN, APPLETABLET, ANDROIDTABLET (but note that 'UNKNOWN' will be rejected by the REST API"
+                },
+                "clientVersion": {
+                    "type": "string",
+                    "description": "Value of the Client-Version header indicating the build of this client app used to identify a release version and date of build",
+                    "default": "4.0.0"
+                },
+                "cordovaAutoDetectTypes": {
+                    "type": "string",
+                    "description": "A optional mapping of Cordova platform detected types to Client-Type header values; these are only used if clientType is null. This is useful, for example within an integration module to allow smart-client to auto-detect IPHONE/ANDROID/BLACKBERRY and tablet to auto detect APPLETABLET/ANDROIDTABLET"
+                },
+                "tenantId": {
+                    "type": "string",
+                    "description": "An ID that identifies the banking customer for this app; this is prepended to all REST API URLs after the `uriPrefix`",
+                    "default": "unknown-tenant-id"
+                },
+                "uriPrefix": {
+                    "type": "string",
+                    "description": "A string prepended to all REST API URLs depending upon the server configuration. For bank of trust, this is usually `banking_rest_api`",
+                    "default": "banking_rest_api"
+                }
+            },
+            "required": [
+                "apiServer",
+                "clientVersion",
+                "tenantId",
+                "uriPrefix"
+            ],
+            "default": {}
+        },
+        "httpAuthSignature": {
+            "description": "Settings to generate the Auth header used by the REST API",
+            "type": "object",
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/httpAuthSignature"
+                }
+            ]
+        },
+        "httpLocale": {
+            "description": "Adds locale related headers to HTTP requests to allow interoperability with Vantage REST API",
+            "type": "object",
+            "required": true,
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/httpLocale"
+                }
+            ]
+        },
+        "i18n": {
+            "type": "object",
+            "properties": {
+                "i18nDebug": {
+                    "description": "Enables i18n debug mode. Every successful translation will be have '[]' around it. Unsuccessful tranlsation will be indicated by '*' ",
+                    "type": "boolean",
+                    "default": false
+                },
+                "i18nConfig": {
+                    "description": "Configure language files path: Module looks for files in the format: path/filePrefix-{{languageKey}}-fileSuffix",
+                    "type": "object",
+                    "properties": {
+                        "path": {
+                            "type": "string",
+                            "description": "Path of directory where language files are stored",
+                            "default": "i18n"
+                        },
+                        "filePrefix": {
+                            "type": "string",
+                            "description": "prefix used for all language files e.g.langauge-en.json, language-fr.json Prefix is 'language'",
+                            "default": "language-"
+                        },
+                        "fileSuffix": {
+                            "type": "string",
+                            "description": "suffix for all language files",
+                            "default": ".json"
+                        },
+                        "supportedLanguages": {
+                            "type": "array",
+                            "description": "list of supported languages",
+                            "default": [
+                                "en-US",
+                                "es-US",
+                                "fr-US"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "path",
+                        "filePrefix",
+                        "fileSuffix"
+                    ],
+                    "default": {}
+                },
+                "defaultLanguage": {
+                    "description": "Sets the default language for application",
+                    "type": "string",
+                    "default": "en-US"
+                }
+            },
+            "required": [
+                "i18nDebug",
+                "i18nConfig",
+                "defaultLanguage"
+            ],
+            "default": {}
+        },
+        "locations": {
+            "description": "Settings for Mvp Ng Locations module.",
+            "type": "object",
+            "properties": {
+                "locationListPageSize": {
+                    "description": "The number of location list items shown in the list view at a time.",
+                    "type": "number",
+                    "default": 15
+                },
+                "defaultMapLocations": {
+                    "description": "The number of map markers shown in the map view at a time.",
+                    "type": "number",
+                    "default": 3
+                },
+                "defaultLongitude": {
+                    "description": "The initial longitudinal coordinate for the Google map's center.",
+                    "type": "string",
+                    "default": ""
+                },
+                "defaultLatitude": {
+                    "description": "The initial latitudinal coordinate for the Google map's center.",
+                    "type": "string",
+                    "default": ""
+                },
+                "enableHighAccuracy": {
+                    "description": "",
+                    "type": "string",
+                    "default": ""
+                },
+                "maximumAge": {
+                    "description": "",
+                    "type": "string",
+                    "default": ""
+                },
+                "timeout": {
+                    "description": "",
+                    "type": "string",
+                    "default": ""
+                },
+                "mapRefreshDistanceMiles": {
+                    "description": "The distance in miles the user needs to drag the map to fetch new location markers.",
+                    "type": "number",
+                    "default": 1
+                },
+                "locationsEnabled": {
+                    "description": "Whether the locations feature is visible on the menu.",
+                    "type": "boolean",
+                    "default": true
+                },
+                "mapClientId": {
+                    "description": "The client ID for the premier license of Google Maps.",
+                    "type": "number",
+                    "default": 0
+                },
+                "mapChannel": {
+                    "description": "The name of the bank that this deployment is for. Leave this blank if the bank has its own premier license.",
+                    "type": "string",
+                    "default": ""
+                }
+            },
+            "required": [
+                "locationListPageSize",
+                "defaultMapLocations",
+                "defaultLongitude",
+                "defaultLatitude",
+                "enableHighAccuracy",
+                "maximumAge",
+                "timeout",
+                "mapRefreshDistanceMiles",
+                "locationsEnabled"
+            ]
+        },
+        "mvpNgMessages": {
+            "properties": {
+                "emergencyMessageEnabled": {
+                    "description": "Default page size for show more functionality",
+                    "type": "boolean",
+                    "default": true
+                }
+            }
+        },
+        "preferences": {
+            "type": "object",
+            "properties": {
+                "supportedTimezones": {
+                    "type": "array",
+                    "description": "Specifies an array of supported timezones",
+                    "default": [
+                        {
+                            "id": "1",
+                            "key": "US/Hawaii",
+                            "abbreviation": "HST"
+                        },
+                        {
+                            "id": "2",
+                            "key": "US/Alaska",
+                            "abbreviation": "AKST",
+                            "dstAbbreviation": "AKDT"
+                        },
+                        {
+                            "id": "3",
+                            "key": "America/Los_Angeles",
+                            "abbreviation": "PST",
+                            "dstAbbreviation": "PDT"
+                        },
+                        {
+                            "id": "4",
+                            "key": "US/Arizona",
+                            "abbreviation": "MST"
+                        },
+                        {
+                            "id": "5",
+                            "key": "US/Mountain",
+                            "abbreviation": "MST",
+                            "dstAbbreviation": "MDT"
+                        },
+                        {
+                            "id": "6",
+                            "key": "America/Chicago",
+                            "abbreviation": "CST",
+                            "dstAbbreviation": "CDT"
+                        },
+                        {
+                            "id": "7",
+                            "key": "America/New_York",
+                            "abbreviation": "EST",
+                            "dstAbbreviation": "EDT"
+                        },
+                        {
+                            "id": "8",
+                            "key": "Canada/Pacific",
+                            "abbreviation": "PST",
+                            "dstAbbreviation": "PDT"
+                        },
+                        {
+                            "id": "9",
+                            "key": "Canada/Mountain",
+                            "abbreviation": "MST",
+                            "dstAbbreviation": "MDT"
+                        },
+                        {
+                            "id": "10",
+                            "key": "Canada/Central",
+                            "abbreviation": "CST",
+                            "dstAbbreviation": "CDT"
+                        },
+                        {
+                            "id": "11",
+                            "key": "Canada/Eastern",
+                            "abbreviation": "EST",
+                            "dstAbbreviation": "EDT"
+                        },
+                        {
+                            "id": "12",
+                            "key": "Canada/Atlantic",
+                            "abbreviation": "AST",
+                            "dstAbbreviation": "ADT"
+                        },
+                        {
+                            "id": "13",
+                            "key": "Canada/Newfoundland",
+                            "abbreviation": "NST",
+                            "dstAbbreviation": "NDT"
+                        }
+                    ]
+                },
+                "payeesEnabled": {
+                    "description": "Enable or disable the payees module",
+                    "type": "boolean",
+                    "default": true
+                },
+                "touchIdEnabled": {
+                    "description": "Enable or disable touchId functionality",
+                    "type": "boolean",
+                    "default": false
+                },
+                "touchIdServiceName": {
+                    "description": "The service name that touch id uses in the devices keychain",
+                    "type": "string",
+                    "default": "BankOfTrust"
+                },
+                "touchIdKey": {
+                    "description": "The key name that touch id uses in the devices keychain",
+                    "type": "string",
+                    "default": "pin"
+                },
+                "passwordUpdateEnabled": {
+                    "description": "Enable or disable Update password functionality",
+                    "type": "boolean",
+                    "default": true
+                },
+                "helpEnabled": {
+                    "description": "Enable or disable Help settings",
+                    "type": "boolean",
+                    "default": true
+                },
+                "timezoneEnabled": {
+                    "description": "Enable or disable Timezone settings",
+                    "type": "boolean",
+                    "default": true
+                },
+                "accountsEnabled": {
+                    "description": "Enable or disable Accounts settings",
+                    "type": "boolean",
+                    "default": true
+                },
+                "textBankingEnabled": {
+                    "description": "Enable or disable Text Banking settings",
+                    "type": "boolean",
+                    "default": true
+                },
+                "securityImageAndPhraseEnabled": {
+                    "description": "Enable or disable Security Image and Phrase settings",
+                    "type": "boolean",
+                    "default": true
+                },
+                "securityQuestionsEnabled": {
+                    "description": "Enable or disable Security Questions settings",
+                    "type": "boolean",
+                    "default": true
+                }
+            },
+            "required": [
+                "supportedTimezones",
+                "payeesEnabled",
+                "touchIdEnabled",
+                "touchIdServiceName",
+                "touchIdKey",
+                "passwordUpdateEnabled",
+                "helpEnabled",
+                "timezoneEnabled",
+                "accountsEnabled",
+                "textBankingEnabled",
+                "securityImageAndPhraseEnabled",
+                "securityQuestionsEnabled"
+            ],
+            "default": {}
+        },
+        "productization": {
+            "type": "object",
+            "properties": {
+                "marketingEnabled": {
+                    "description": "Whether marketing is enabled at a global level for all procuts",
+                    "type": "boolean",
+                    "default": true
+                },
+                "forceProductizationOnPinLogin": {
+                    "description": "Whether marketing is enabled at a global level for all procuts",
+                    "type": "boolean",
+                    "default": false
+                },
+                "products": {
+                    "description": "Names of products (NOTE: you should probably NOT change these ... only very few banks actually would need this option)",
+                    "type": "object",
+                    "properties": {
+                        "passthrough": {
+                            "description": "passthrough product name",
+                            "type": "string",
+                            "default": "passthrough"
+                        },
+                        "basic": {
+                            "description": "basic product name",
+                            "type": "string",
+                            "default": "basic"
+                        },
+                        "dda": {
+                            "description": "dda product name",
+                            "type": "string",
+                            "default": "dda"
+                        },
+                        "transfer": {
+                            "description": "transfer product name",
+                            "type": "string",
+                            "default": "transfer"
+                        },
+                        "billpay": {
+                            "description": "billpay product name",
+                            "type": "string",
+                            "default": "billpay"
+                        },
+                        "fraud": {
+                            "description": "fraud product name",
+                            "type": "string",
+                            "default": "fraud"
+                        },
+                        "rdc": {
+                            "description": "rdc product name",
+                            "type": "string",
+                            "default": "rdc"
+                        },
+                        "p2p": {
+                            "description": "p2p product name",
+                            "type": "string",
+                            "default": "p2p"
+                        }
+                    },
+                    "required": [
+                        "passthrough",
+                        "basic",
+                        "dda",
+                        "transfer",
+                        "billpay",
+                        "fraud",
+                        "rdc",
+                        "p2p"
+                    ]
+                }
+            },
+            "required": [
+                "marketingEnabled",
+                "products",
+                "forceProductizationOnPinLogin"
+            ]
+        },
+        "transfers": {
+            "description": "Transfer Module Settings",
+            "type": "object",
+            "properties": {
+                "transferReview": {
+                    "description": "Toggles Review step, Next becomes Submit and Confirmation page skipped",
+                    "type": "boolean",
+                    "default": true
+                },
+                "transfersEnabled": {
+                    "description": "Enable or disable the transfers module",
+                    "type": "boolean",
+                    "default": true
+                },
+                "transfersRecentEnabled": {
+                    "description": "Enable or disable the transfers recent tab",
+                    "type": "boolean",
+                    "default": true
+                },
+                "transfersScheduledEnabled": {
+                    "description": "Enable or disable the transfers schedule tab",
+                    "type": "boolean",
+                    "default": true
+                },
+                "minDays": {
+                    "description": "The number of days before a user is able to select a date. Should be less than the maxDays",
+                    "type": "integer",
+                    "default": 0
+                },
+                "maxDays": {
+                    "description": "The total number of days that user is able to select a date until. Should be greater than minDays",
+                    "type": "integer",
+                    "default": 3650
+                },
+                "blackOutDays": {
+                    "description": "Days of the week indicated by 0 (Sunday) though 6 (Saturday) that will be blacked out",
+                    "type": "array",
+                    "default": []
+                },
+                "blackOutDates": {
+                    "description": "Date Ranges or individual dates in the following format: ['20 Mar 2014 - 1 May 2014', '28 Apr 2014'] that are blacked out or unselectable on the calendar. Typically holidays. ",
+                    "type": "array",
+                    "default": []
+                }
+            },
+            "required": [
+                "transferReview",
+                "transfersEnabled",
+                "transfersRecentEnabled",
+                "transfersScheduledEnabled",
+                "minDays",
+                "maxDays",
+                "blackOutDays",
+                "blackOutDates"
+            ]
+        },
+        "utilities": {
+            "title": "mvp-ng-utilities Settings Schema",
+            "description": "Misc Utility services used by other smartclient modules",
+            "type": "object",
+            "properties": {
+                "clientSession": {
+                    "description": "Client session timeout specific properties",
+                    "type": "object",
+                    "properties": {
+                        "timeoutEnabled": {
+                            "description": "flag denoting of client session timeout is enabled or not",
+                            "type": "boolean",
+                            "default": true
+                        },
+                        "timeoutInSeconds": {
+                            "description": "how long the user can be inactive before session times out (in seconds)",
+                            "type": "integer",
+                            "default": 300
+                        },
+                        "startEvent": {
+                            "description": "the event that will cause the session timeout counter to begin",
+                            "type": "string",
+                            "default": "$authSessionStart"
+                        },
+                        "stopEvent": {
+                            "description": "the event that will cause the session timeout counter to stop",
+                            "type": "string",
+                            "default": "$authSessionEnded"
+                        },
+                        "timeoutEvent": {
+                            "description": "the event that will fire when the session expires",
+                            "type": "string",
+                            "default": "$softSignOut"
+                        },
+                        "timeoutMessage": {
+                            "description": "the message we will send with the session timeout event",
+                            "type": "string",
+                            "default": "session.timeout.msg"
+                        }
+                    },
+                    "required": [
+                        "timeoutEnabled",
+                        "timeoutInSeconds",
+                        "startEvent",
+                        "stopEvent",
+                        "timeoutEvent",
+                        "timeoutMessage"
+                    ]
+                },
+                "defaultTimezone": {
+                    "description": "default timezone if for some reason we cannot or do not retrieve it from preferences",
+                    "type": "string",
+                    "default": "America/Los_Angeles"
+                },
+                "defaultCurrencyCode": {
+                    "description": "Default Currency Code if for some reason we cannot or do not retrieve it from account",
+                    "type": "string",
+                    "default": "USD"
+                },
+                "addTimeZoneToTimeStamps": {
+                    "description": "This setting will add the timezone to all timestamps in the app",
+                    "type": "boolean",
+                    "default": true
+                }
+            },
+            "required": [
+                "clientSession",
+                "defaultTimezone",
+                "defaultCurrencyCode",
+                "addTimeZoneToTimeStamps"
+            ]
+        },
+        "enrollmentApp": {
+            "type": "object",
+            "properties": {
+                "staticAssetsPathPrefix": {
+                    "description": "Path prefix for all static assets; should correspond to where the .war file will be deployed",
+                    "type": "string",
+                    "default": ""
+                },
+                "displayDebugMessages": {
+                    "description": "Whether to display debugging level messages in error blocks on screen visible in the UI",
+                    "type": "boolean",
+                    "default": false
+                },
+                "applicationType": {
+                    "description": "denotes which type of application will be available, full - all of omnichannel, enrollment - enrollment + ",
+                    "type": "string",
+                    "default": "full"
+                },
+                "enrollFlow": {
+                    "description": "Configures the enrollment flow which sets up a users account ",
+                    "type": "object",
+                    "properties": {
+                        "abandonFlowTargetState": {
+                            "description": "Where the user should be directed if they abandon the enroll flow via $state.go()",
+                            "type": "object",
+                            "properties": {
+                                "state": {
+                                    "description": "The state name to send the user to",
+                                    "type": "string",
+                                    "default": "unauthenticated.marketingLanding"
+                                },
+                                "params": {
+                                    "description": "(Optional) state parameters to be passed to $state.go() method as the second argument",
+                                    "type": "object"
+                                },
+                                "options": {
+                                    "description": "(Optional) state options to be passed to $state.go() method as the third argument",
+                                    "type": "object"
+                                }
+                            },
+                            "required": [
+                                "state"
+                            ]
+                        },
+                        "finishFlowTargetState": {
+                            "description": "Where the user should be directed once they successfully complete enrollment via $state.go()",
+                            "type": "object",
+                            "properties": {
+                                "state": {
+                                    "description": "The state name to send the user to",
+                                    "type": "string",
+                                    "default": "unauthenticated.enrollSuccess"
+                                },
+                                "params": {
+                                    "description": "(Optional) state parameters to be passed to $state.go() method as the second argument",
+                                    "type": "object"
+                                },
+                                "options": {
+                                    "description": "(Optional) state options to be passed to $state.go() method as the third argument",
+                                    "type": "object"
+                                }
+                            },
+                            "required": [
+                                "state"
+                            ]
+                        },
+                        "basic-steps": {
+                            "description": "Defines the steps of the enrollment flow in terms of states that will be advanced to via $state.go()",
+                            "type": "array",
+                            "items": [
+                                {
+                                    "description": "The state information of a step advanced into using $state.go()",
+                                    "type": "object",
+                                    "properties": {
+                                        "state": {
+                                            "description": "The state name to send the user to",
+                                            "type": "string"
+                                        },
+                                        "params": {
+                                            "description": "(Optional) state parameters to be passed to $state.go() method as the second argument",
+                                            "type": "object"
+                                        },
+                                        "options": {
+                                            "description": "(Optional) state options to be passed to $state.go() method as the third argument",
+                                            "type": "object"
+                                        }
+                                    },
+                                    "required": [
+                                        "state"
+                                    ]
+                                }
+                            ],
+                            "default": [
+                                {
+                                    "state": "unauthenticated.enroll.confirmIdentity"
+                                },
+                                {
+                                    "state": "unauthenticated.enroll.createProfile"
+                                }
+                            ]
+                        },
+                        "mfa-sitekey-steps": {
+                            "description": "Defines the steps of the enrollment flow in terms of states that will be advanced to via $state.go()",
+                            "type": "array",
+                            "default": [
+                                {
+                                    "state": "unauthenticated.enroll.confirmIdentity"
+                                },
+                                {
+                                    "state": "unauthenticated.enroll.createProfile"
+                                },
+                                {
+                                    "state": "unauthenticated.enroll.setupSecurity"
+                                }
+                            ]
+                        },
+                        "mfa-nositekey-steps": {
+                            "description": "Defines the steps of the enrollment flow in terms of states that will be advanced to via $state.go()",
+                            "type": "array",
+                            "default": [
+                                {
+                                    "state": "unauthenticated.enroll.confirmIdentity"
+                                },
+                                {
+                                    "state": "unauthenticated.enroll.createProfile"
+                                },
+                                {
+                                    "state": "unauthenticated.enroll.setupSecurity"
+                                }
+                            ]
+                        },
+                        "otp-steps": {
+                            "description": "Defines the steps of the enrollment OTP flow in terms of states that will be advanced to via $state.go()",
+                            "type": "array",
+                            "default": [
+                                {
+                                    "state": "unauthenticated.enroll.confirmIdentity"
+                                },
+                                {
+                                    "state": "unauthenticated.enroll.createProfile"
+                                }
+                            ]
+                        }
+                    },
+                    "required": [
+                        "abandonFlowTargetState",
+                        "finishFlowTargetState",
+                        "basic-steps",
+                        "mfa-sitekey-steps",
+                        "mfa-nositekey-steps"
+                    ]
+                },
+                "authenticationFlow": {
+                    "description": "Configures the authentication flow which sets up a users account ",
+                    "type": "object",
+                    "properties": {
+                        "abandonFlowTargetState": {
+                            "description": "Where the user should be directed if they abandon the authentication flow via $state.go()",
+                            "type": "object",
+                            "properties": {
+                                "state": {
+                                    "description": "The state name to send the user to",
+                                    "type": "string",
+                                    "default": "unauthenticated.marketingLanding"
+                                },
+                                "params": {
+                                    "description": "(Optional) state parameters to be passed to $state.go() method as the second argument",
+                                    "type": "object"
+                                },
+                                "options": {
+                                    "description": "(Optional) state options to be passed to $state.go() method as the third argument",
+                                    "type": "object"
+                                }
+                            },
+                            "required": [
+                                "state"
+                            ]
+                        },
+                        "finishFlowTargetState": {
+                            "description": "Where the user should be directed once they successfully complete authentication via $state.go()",
+                            "type": "object",
+                            "properties": {
+                                "state": {
+                                    "description": "The state name to send the user to",
+                                    "type": "string",
+                                    "default": "authenticated.dashboard"
+                                },
+                                "params": {
+                                    "description": "(Optional) state parameters to be passed to $state.go() method as the second argument",
+                                    "type": "object"
+                                },
+                                "options": {
+                                    "description": "(Optional) state options to be passed to $state.go() method as the third argument",
+                                    "type": "object"
+                                }
+                            },
+                            "required": [
+                                "state"
+                            ]
+                        },
+                        "basic-steps": {
+                            "description": "Defines the steps of the authentication flow in terms of states that will be advanced to via $state.go()",
+                            "type": "array",
+                            "items": [
+                                {
+                                    "description": "The state information of a step advanced into using $state.go()",
+                                    "type": "object",
+                                    "properties": {
+                                        "state": {
+                                            "description": "The state name to send the user to",
+                                            "type": "string"
+                                        },
+                                        "params": {
+                                            "description": "(Optional) state parameters to be passed to $state.go() method as the second argument",
+                                            "type": "object"
+                                        },
+                                        "options": {
+                                            "description": "(Optional) state options to be passed to $state.go() method as the third argument",
+                                            "type": "object"
+                                        }
+                                    },
+                                    "required": [
+                                        "state"
+                                    ]
+                                }
+                            ],
+                            "default": [
+                                {
+                                    "state": "unauthenticated.basicLogin"
+                                }
+                            ]
+                        },
+                        "mfa-sitekey-steps": {
+                            "description": "Defines the steps of the authentication flow in terms of states that will be advanced to via $state.go()",
+                            "type": "array",
+                            "default": [
+                                {
+                                    "state": "unauthenticated.auth.login"
+                                },
+                                {
+                                    "state": "unauthenticated.auth.question"
+                                },
+                                {
+                                    "state": "unauthenticated.auth.passphrase"
+                                }
+                            ]
+                        },
+                        "mfa-nositekey-steps": {
+                            "description": "Defines the steps of the authentication flow in terms of states that will be advanced to via $state.go()",
+                            "type": "array",
+                            "default": [
+                                {
+                                    "state": "unauthenticated.auth.noSKLogin"
+                                },
+                                {
+                                    "state": "unauthenticated.auth.question"
+                                }
+                            ]
+                        },
+                        "otp-steps": {
+                            "description": "Defines the steps of the OTP authentication flow in terms of states that will be advanced to via $state.go()",
+                            "type": "array",
+                            "default": [
+                                {
+                                    "state": "unauthenticated.auth.otpLogin"
+                                },
+                                {
+                                    "state": "unauthenticated.auth.otpCode"
+                                }
+                            ]
+                        }
+                    },
+                    "required": [
+                        "abandonFlowTargetState",
+                        "finishFlowTargetState",
+                        "basic-steps",
+                        "mfa-sitekey-steps",
+                        "mfa-nositekey-steps",
+                        "otp-steps"
+                    ]
+                },
+                "mfaNumberOfQuestions": {
+                    "description": "How many MFA questions should the user be prompted to create",
+                    "type": "integer",
+                    "default": 3
+                },
+                "createCredentialsEnabled": {
+                    "description": "Flag that enables or disables enrollment functionality",
+                    "type": "boolean",
+                    "default": true
+                },
+                "forgotUsernameEnabled": {
+                    "description": "If forgot username functionality is enabled",
+                    "type": "boolean",
+                    "default": true
+                },
+                "forgotPasswordEnabled": {
+                    "description": "if forgot password functionality is enabled",
+                    "type": "boolean",
+                    "default": true
+                },
+                "androidAppLink": {
+                    "description": "Link to this app for the Google Play store",
+                    "type": "string",
+                    "default": "#"
+                },
+                "iosAppLink": {
+                    "description": "Link to this app for the Apple App store",
+                    "type": "string",
+                    "default": "#"
+                },
+                "rememberUsernameEnabled": {
+                    "description": "Enable the remember username functionality",
+                    "type": "boolean",
+                    "default": true
+                },
+                "defaultSupportedLanguages": {
+                    "description": "Default Supported Languages",
+                    "type": "object",
+                    "default": {
+                        "22": {
+                            "displayName": "English (US)",
+                            "locale": "en_US",
+                            "messageKey": "language.us.en"
+                        },
+                        "23": {
+                            "displayName": "French",
+                            "locale": "fr_US",
+                            "messageKey": "language.us.fr"
+                        },
+                        "24": {
+                            "displayName": "Spanish",
+                            "locale": "es_US",
+                            "messageKey": "language.us.es"
+                        }
+                    }
+                },
+                "rememberUsernameDefault": {
+                    "description": "default state for the remember username functionality",
+                    "type": "boolean",
+                    "default": true
+                },
+                "preferenceDefault": {
+                    "description": "Default selected preference: available values: null, security, language, timezone, account",
+                    "type": "string",
+                    "default": "security"
+                },
+                "navigation": {
+                    "description": "Top level navigation items and their visibility status, this is used in navigation-ui-service, it will fitler after applicationType",
+                    "type": "object",
+                    "default": {
+                        "dashboard": {
+                            "enabled": true
+                        },
+                        "transfer": {
+                            "enabled": true
+                        },
+                        "payments": {
+                            "enabled": true
+                        },
+                        "alerts": {
+                            "enabled": true
+                        },
+                        "preferences": {
+                            "enabled": true
+                        },
+                        "more": {
+                            "enabled": true
+                        },
+                        "help": {
+                            "enabled": true
+                        },
+                        "contactUs": {
+                            "enabled": true
+                        },
+                        "privacyPolicy": {
+                            "enabled": true
+                        },
+                        "locations": {
+                            "enabled": true
+                        }
+                    }
+                },
+                "otpCounterTime": {
+                    "description": "Number os seconds set for the OTP counter.",
+                    "type": "integer",
+                    "default": 60
+                },
+                "allowDisableAccount": {
+                    "description": "This flag makes disable an account option visible to user",
+                    "type": "boolean",
+                    "default": true
+                },
+                "allowDisablePayee": {
+                    "description": "This flag makes disable a payee option visible to user",
+                    "type": "boolean",
+                    "default": true
+                },
+                "keepAliveUrl": {
+                    "description": "URL that the keep alive ping should contact, if set to blank or # no ping will occur",
+                    "type": "string",
+                    "default": "#"
+                }
+            },
+            "required": [
+                "staticAssetsPathPrefix",
+                "displayDebugMessages",
+                "applicationType",
+                "enrollFlow",
+                "mfaNumberOfQuestions",
+                "createCredentialsEnabled",
+                "forgotUsernameEnabled",
+                "forgotPasswordEnabled",
+                "keepAliveUrl"
+            ]
+        }
+    },
+    "required": [
+        "alerts",
+        "mvpAuth",
+        "billPay",
+        "payees",
+        "cordovaPushNotification",
+        "mvpNgDda",
+        "http",
+        "httpAuthSignature",
+        "httpLocale",
+        "i18n",
+        "locations",
+        "preferences",
+        "productization",
+        "transfers",
+        "utilities",
+        "enrollmentApp"
+    ],
+    "definitions": {
+        "httpAuthSignature": {
+            "description": "authentication core settings",
+            "type": "object",
+            "properties": {
+                "authConsumerKey": {
+                    "description": "Consumer key used in auth signature",
+                    "type": "string",
+                    "default": "abcd"
+                },
+                "authHeaderName": {
+                    "description": "Name of the authentication header to be assigned with the generated auth header",
+                    "type": "string",
+                    "default": "Auth"
+                },
+                "authSignatureMethod": {
+                    "description": "The cryptographic method for signing, e.g. SHA-256",
+                    "type": "string",
+                    "default": "RSA-SHA256"
+                },
+                "authVersion": {
+                    "description": "Version of authorization algorythm API on server to be used",
+                    "type": "string",
+                    "default": "1.0"
+                },
+                "consumerKey": {
+                    "description": "Consumer key used in signing",
+                    "type": "string",
+                    "default": "abcd"
+                },
+                "consumerSecret": {
+                    "description": "Consumer secret key in signing; this is like the public key from an ssh keypair",
+                    "type": "string",
+                    "default": "-----BEGIN RSA PRIVATE KEY-----\nMIICWwIBAAKBgQDRhGF7X4A0ZVlEg594WmODVVUIiiPQs04aLmvfg8SborHss5gQ\nXu0aIdUT6nb5rTh5hD2yfpF2WIW6M8z0WxRhwicgXwi80H1aLPf6lEPPLvN29EhQ\nNjBpkFkAJUbS8uuhJEeKw0cE49g80eBBF4BCqSL6PFQbP9/rByxdxEoAIQIDAQAB\nAoGAA9/q3Zk6ib2GFRpKDLO/O2KMnAfR+b4XJ6zMGeoZ7Lbpi3MW0Nawk9ckVaX0\nZVGqxbSIX5Cvp/yjHHpww+QbUFrw/gCjLiiYjM9E8C3uAF5AKJ0r4GBPl4u8K4bp\nbXeSxSB60/wPQFiQAJVcA5xhZVzqNuF3EjuKdHsw+dk+dPECQQDubX/lVGFgD/xY\nuchz56Yc7VHX+58BUkNSewSzwJRbcueqknXRWwj97SXqpnYfKqZq78dnEF10SWsr\n/NMKi+7XAkEA4PVqDv/OZAbWr4syXZNv/Mpl4r5suzYMMUD9U8B2JIRnrhmGZPzL\nx23N9J4hEJ+Xh8tSKVc80jOkrvGlSv+BxwJAaTOtjA3YTV+gU7Hdza53sCnSw/8F\nYLrgc6NOJtYhX9xqdevbyn1lkU0zPr8mPYg/F84m6MXixm2iuSz8HZoyzwJARi2p\naYZ5/5B2lwroqnKdZBJMGKFpUDn7Mb5hiSgocxnvMkv6NjT66Xsi3iYakJII9q8C\nMa1qZvT/cigmdbAh7wJAQNXyoizuGEltiSaBXx4H29EdXNYWDJ9SS5f070BRbAIl\ndqRh3rcNvpY6BKJqFapda1DjdcncZECMizT/GMrc1w==\n-----END RSA PRIVATE KEY-----"
+                },
+                "tokenSecret": {
+                    "description": "Token secret used in signing",
+                    "type": "string",
+                    "default": "mnop"
+                },
+                "urlPatterns": {
+                    "description": "list of patterns to be signed with the auth signature, e.g. anything with /api/ ",
+                    "type": "array",
+                    "default": [
+                        "rest_api",
+                        "mvp-csr"
+                    ]
+                }
+            },
+            "required": [
+                "authConsumerKey",
+                "authHeaderName",
+                "authSignatureMethod",
+                "authVersion",
+                "consumerKey",
+                "consumerSecret",
+                "tokenSecret",
+                "urlPatterns"
+            ]
+        },
+        "httpLocale": {
+            "type": "object",
+            "properties": {
+                "preferredLocale": {
+                    "type": "string",
+                    "default": "en_US"
+                },
+                "fallbackLocales": {
+                    "type": "array",
+                    "default": [
+                        "en-US",
+                        "en"
+                    ]
+                },
+                "fallbackLocaleQuality": {
+                    "type": "number",
+                    "default": 0.8
+                }
+            },
+            "required": [
+                "preferredLocale",
+                "fallbackLocales",
+                "fallbackLocaleQuality"
+            ]
+        }
+    }
+}

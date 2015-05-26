@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <script src="jquery-1.11.3.min.js"> </script>
+    <script type="text/javascript">
+ 
+$(document).ready(function () 
+{
+    
+    var source = "master-settings.json";
+    var row = tbody.insertRow();
+    var cell = row.insertCell();
+    var level=0;
+    var spaces=0;
+
+    $.ajaxSetup({beforeSend: function(xhr)
+    {
+        if (xhr.overrideMimeType)
+        {
+            xhr.overrideMimeType("application/json");
+        }   
+        }
+    });
+        
+    $.getJSON(source, function (result) 
+    {  
+        traverse(result);
+    });
+
+    
+
+    function traverse(o)
+    {   
+        if( typeof o == "object" ) 
+        {   
+            $.each(o, function(k,v) 
+            {
+                if(k=="required")
+                {
+                   level--;
+                }
+                while(spaces<level)
+                {
+                    cell = row.insertCell();
+                    spaces++;
+                }
+                spaces=0;
+                if( typeof v == "array") 
+                {
+                    cell = row.insertCell();
+                }
+                if(typeof k == "number")
+                {
+                    cell.innerHTML=" ";
+                }
+                else
+                {
+                    cell.innerHTML = k;
+                }   
+                cell = row.insertCell(); 
+                if( typeof v == "object") 
+                {
+                    if(k=="properties")
+                    {
+                        level++;
+                    }
+                row = tbody.insertRow(); 
+                cell = row.insertCell();
+                }else{           
+                    cell.innerHTML = v; 
+                    cellCount = row.cells.length;
+                    while(cellCount<8)
+                    {
+                        cell = row.insertCell();
+                        cellCount++;
+                    }
+                }   
+                traverse(v);
+            });
+        }else {
+            row = tbody.insertRow();
+            cell = row.insertCell();
+        }
+    }   
+});
+      
+</script>
+<style type="text/css">
+
+table{
+    border: 1px solid black;
+    table-layout: fixed;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid black;
+    overflow: hidden;
+    width: 125px;
+}
+</style>
+</head>
+<body>
+
+<table id="table" >
+ <tbody id="tbody">
+ </tbody>
+</table>
+
+</body>
+</html>
