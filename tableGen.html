@@ -8,7 +8,6 @@
  
 $(document).ready(function () 
 {
-    
     var source = "master-settings.json";
     var row = tbody.insertRow();
     var cell = row.insertCell();
@@ -29,59 +28,133 @@ $(document).ready(function ()
         traverse(result);
     });
 
-    
+    var log=0;
 
     function traverse(o)
-    {   
+    {  
         if( typeof o == "object" ) 
         {   
             $.each(o, function(k,v) 
             {
+             var req="";
                 if(k=="required")
                 {
-                   level--;
-                }
-                while(spaces<level)
-                {
-                    cell = row.insertCell();
-                    spaces++;
-                }
-                spaces=0;
-                if( typeof v == "array") 
-                {
-                    cell = row.insertCell();
-                }
+                    if(typeof v == "boolean")
+                    {           
+                        return true;
+                    }
+                    else
+                    {
+                        level--;
+                    }
+                    if(level<0)
+                    {
+                        level=0;
+                    }
+                } 
                 if(typeof k == "number")
                 {
                     cell.innerHTML=" ";
                 }
-                else
+                if(k=="title")
                 {
-                    cell.innerHTML = k;
-                }   
-                cell = row.insertCell(); 
-                if( typeof v == "object") 
+                    cell.innerHTML=v;
+                }
+                 if(k=="type")
                 {
+                    cell.innerHTML=v;
+                }
+                if(typeof v == "object") 
+                {
+                    if(k=="default")
+                    {
+                        console.log(k);
+                        return true;
+                    }
                     if(k=="properties")
                     {
+                        cell.innerHTML="[]";
                         level++;
                     }
-                row = tbody.insertRow(); 
-                cell = row.insertCell();
-                }else{           
-                    cell.innerHTML = v; 
-                    cellCount = row.cells.length;
-                    while(cellCount<8)
-                    {
-                        cell = row.insertCell();
-                        cellCount++;
-                    }
-                }   
+                    else{
+                        if( Object.prototype.toString.call( v ) !== '[object Array]') {
+                            var loops = row.cells.length;
+                            while(loops<11)
+                            {
+                                cell = row.insertCell();
+                                loops++;
+                            }
+                            row = tbody.insertRow(); 
+                        }
+                        else if(k=="required")
+                        { 
+                            for(var x in v)
+                            {
+                                req+=v[x]+ ', ';
+                            }  
+                            var loops = row.cells.length;
+                            while(loops<11)
+                            {
+                                cell = row.insertCell();
+                                loops++;
+                            } 
+                            row = tbody.insertRow(); 
+                        }
+                        else{
+                            return true;
+                        }
+                        if(level>0)
+                        {
+                            cell = row.insertCell();
+                            cell = row.insertCell();
+                        }
+                        else{
+                            cell=row.insertCell();
+                        }
+                        var temp = spaces;
+                        while(spaces<level)
+                        {
+                            cell = row.insertCell();
+                            spaces++;
+                        }
+                        spaces=temp;
+                        cell = row.insertCell(); 
+                        cell.innerHTML = k;
+                        if(k=="required")
+                        { 
+                           cell = row.insertCell(); 
+                           cell.innerHTML = req;
+                           return true;
+                        }
+                         if(level==1)
+                         {
+                            cell = row.insertCell();
+                            cell = row.insertCell(); 
+                            cell = row.insertCell();
+                            cell = row.insertCell();
+                         }
+                         if(level==2)
+                         {
+                            cell = row.insertCell();
+                            cell = row.insertCell(); 
+                            cell = row.insertCell();
+                         }
+                        if(level==3)
+                         {
+                            cell = row.insertCell();
+                            cell = row.insertCell();
+                         }
+                         if(level==4)
+                         {
+                            cell = row.insertCell();
+                         }
+                        }
+               }else{
+                        cell.innerHTML = v;
+                   }
+                cell = row.insertCell(); 
                 traverse(v);
             });
-        }else {
-            row = tbody.insertRow();
-            cell = row.insertCell();
         }
     }   
 });
@@ -90,24 +163,32 @@ $(document).ready(function ()
 <style type="text/css">
 
 table{
-    border: 1px solid black;
-    table-layout: fixed;
+    border: 1px solid black;   
     width: 100%;
 }
 
 th, td {
-    border: 1px solid black;
-    overflow: hidden;
-    width: 125px;
+    border: 1px solid black; 
 }
 </style>
 </head>
 <body>
-
 <table id="table" >
  <tbody id="tbody">
+     <tr>
+    <th>Object</th>
+    <th>Description</th>
+    <th>Type</th>
+    <th>Property</th>
+    <th>Sub-Property</th>
+    <th>Sub-Property</th>
+    <th>Sub-Property</th>
+    <th>Sub-Property</th>
+    <th>Description</th> 
+    <th>Type</th>   
+    <th>Default</th>
+  </tr>
  </tbody>
 </table>
-
 </body>
 </html>
