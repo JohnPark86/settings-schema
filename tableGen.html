@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-    <meta content="utf-8" http-equiv="encoding">
-    <script src="jquery-1.11.3.min.js"> </script>
-    <script type="text/javascript">
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+<script src="jquery-1.11.3.min.js"> </script>
+<script type="text/javascript">
  
 $(document).ready(function () 
 {
@@ -27,16 +27,18 @@ $(document).ready(function ()
     {  
         traverse(result);
     });
-
-    var log=0;
-
+  
     function traverse(o)
     {  
         if( typeof o == "object" ) 
         {   
             $.each(o, function(k,v) 
             {
-             var req="";
+                var req="";
+                if(k=="minimum")
+                {
+                    return true;
+                }
                 if(k=="required")
                 {
                     if(typeof v == "boolean")
@@ -46,31 +48,14 @@ $(document).ready(function ()
                     else
                     {
                         level--;
-                    }
-                    if(level<0)
-                    {
-                        level=0;
-                    }
+                        if(level<0)
+                        {
+                            level=0;
+                        }
+                    }    
                 } 
-                if(typeof k == "number")
-                {
-                    cell.innerHTML=" ";
-                }
-                if(k=="title")
-                {
-                    cell.innerHTML=v;
-                }
-                 if(k=="type")
-                {
-                    cell.innerHTML=v;
-                }
                 if(typeof v == "object") 
-                {
-                    if(k=="default")
-                    {
-                        console.log(k);
-                        return true;
-                    }
+                {  
                     if(k=="properties")
                     {
                         cell.innerHTML="[]";
@@ -78,13 +63,7 @@ $(document).ready(function ()
                     }
                     else{
                         if( Object.prototype.toString.call( v ) !== '[object Array]') {
-                            var loops = row.cells.length;
-                            while(loops<11)
-                            {
-                                cell = row.insertCell();
-                                loops++;
-                            }
-                            row = tbody.insertRow(); 
+                           rowFinisher(row.cells.length);
                         }
                         else if(k=="required")
                         { 
@@ -92,13 +71,7 @@ $(document).ready(function ()
                             {
                                 req+=v[x]+ ', ';
                             }  
-                            var loops = row.cells.length;
-                            while(loops<11)
-                            {
-                                cell = row.insertCell();
-                                loops++;
-                            } 
-                            row = tbody.insertRow(); 
+                            rowFinisher(row.cells.length);
                         }
                         else{
                             return true;
@@ -126,37 +99,32 @@ $(document).ready(function ()
                            cell.innerHTML = req;
                            return true;
                         }
-                         if(level==1)
+                         var temp = level;
+                         while(level<5)
                          {
                             cell = row.insertCell();
-                            cell = row.insertCell(); 
-                            cell = row.insertCell();
-                            cell = row.insertCell();
+                            level++;
                          }
-                         if(level==2)
-                         {
-                            cell = row.insertCell();
-                            cell = row.insertCell(); 
-                            cell = row.insertCell();
-                         }
-                        if(level==3)
-                         {
-                            cell = row.insertCell();
-                            cell = row.insertCell();
-                         }
-                         if(level==4)
-                         {
-                            cell = row.insertCell();
-                         }
-                        }
-               }else{
-                        cell.innerHTML = v;
-                   }
+                         level = temp;
+                    }
+                }else{
+                    cell.innerHTML = v;
+                }
                 cell = row.insertCell(); 
                 traverse(v);
             });
         }
     }   
+
+    function rowFinisher(loops){
+        while(loops<11)
+        {
+            cell = row.insertCell();
+            loops++;
+        } 
+        row = tbody.insertRow();
+    } 
+
 });
       
 </script>
@@ -166,7 +134,6 @@ table{
     border: 1px solid black;   
     width: 100%;
 }
-
 th, td {
     border: 1px solid black; 
 }
@@ -174,21 +141,21 @@ th, td {
 </head>
 <body>
 <table id="table" >
- <tbody id="tbody">
-     <tr>
-    <th>Object</th>
-    <th>Description</th>
-    <th>Type</th>
-    <th>Property</th>
-    <th>Sub-Property</th>
-    <th>Sub-Property</th>
-    <th>Sub-Property</th>
-    <th>Sub-Property</th>
-    <th>Description</th> 
-    <th>Type</th>   
-    <th>Default</th>
-  </tr>
- </tbody>
+    <tbody id="tbody">
+        <tr>
+        <th>Object</th>
+        <th>Description</th>
+        <th>Type</th>
+        <th>Property</th>
+        <th>Sub-Property</th>
+        <th>Sub-Property</th>
+        <th>Sub-Property</th>
+        <th>Sub-Property</th>
+        <th>Description</th> 
+        <th>Type</th>   
+        <th>Default</th>
+        </tr>
+    </tbody>
 </table>
 </body>
 </html>
